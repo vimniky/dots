@@ -1,0 +1,1 @@
+/Users/vimniky/.nvm/versions/node/v5.10.0/lib/node_modules/mongo-hacker/mongo_hacker.js
