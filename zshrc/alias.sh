@@ -1,6 +1,7 @@
 # source in zsh configs
 alias sozsh="source ~/.zshrc"
-
+alias initdot="source $dotDir/init.sh"
+alias vinit="vim $dotDir/init.sh"
 
 # alias for editting zsh settings files
 alias vzshrc="vim ~/.zshrc"
@@ -26,22 +27,6 @@ alias doc="cd ~/Documents"
 alias rrm="rm -rf"
 alias cpp="cp -Rp"
 
-# mkalias on the fly
-############################
-function mkalias() {
-    echo  "alias $1=\"$2\" >> $dotZshrc/autoalias.sh";
-    source ~/.zshrc
-}
-
-# tree 
-############################
-# useage treel 2 ~/someDir
-function treel() {
-     tree -L $1 $2
-}
-function treela() {
-     tree -La $1 $2
-}
 alias treep="tree --noreport -fp"
 alias treepa="tree --noreport -fpa"
 

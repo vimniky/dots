@@ -5,6 +5,7 @@ export USER_NAME="vimniky"
 # source in other custom setting files
 . $dotZshrc/alias.sh
 . $dotZshrc/autoalias.sh
+. $dotZshrc/functions.sh
 . $dotZshrc/export.sh
 
 
@@ -16,10 +17,4 @@ export dotMongorc=$dotDir/mongorc
 export dotEditorsrc=$dotDir/editorsrc
 
 
-# File search
-function f() { find . -iname "*$1*" ${@:2} }
-function r() { grep "$1" ${@:2} -R . }
-
-# mkdir and cd 
-function take() { mkdir -p "$@" && cd "$_";}
 
