@@ -1,11 +1,19 @@
 export PATH="$HOME/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
+export USER_NAME="vimniky"
+
+# source in other custom setting files
+. $dotZshrc/alias.sh
+. $dotZshrc/autoalias.sh
+. $dotZshrc/export.sh
+
 
 # custom config dirctory of  zsh
-export dotsDir=$HOME/dots
-export zshrcDir=$HOME/dots/zshrc
+export dotDir=$HOME/dots
+export dotZshrc=$dotDir/zshrc
+export dotVimrc=$dotDir/vimrc
+export dotMongorc=$dotDir/mongorc
 
-export USER_NAME="vimniky"
 
 # File search
 function f() { find . -iname "*$1*" ${@:2} }

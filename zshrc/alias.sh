@@ -1,29 +1,35 @@
-# vim
-dotzshrc=$HOME/dots/zshrc
+# source in zsh configs
+alias sozsh="source ~/.zshrc"
 
-alias vzshrc='vim ~/.zshrc'
-alias valias='vim ~/dots/zshrc/alias.sh'
-alias vautoalias='vim ~/dots/zshrc/autoalias.sh'
-alias vzshrc='vim ~/dots/zsh/zshrc.sh'
-alias vimrc='vim ~/.vimrc'
-alias vexport='vim ~/dots/zshrc/export.sh'
-alias vset='vim ~/.vim/custom/settings.vim'
-alias vmap='vim ~/.vim/custom/mappings.vim'
-alias vgit='vim ~/.gitconfig'
+
+# alias for editting zsh settings files
+alias vzshrc="vim ~/.zshrc"
+alias valias="vim $dotZshrc/alias.sh"
+alias vautoalias="vim $dotZshrc/autoalias.sh"
+alias vzsh="vim $dotZshrc/zshrc.sh"
+alias vimrc="vim ~/.vimrc"
+alias vexport="vim $dotZshrc/export.sh"
+
+# alias for editting vim settings files
+vimCustom=$dotVimrc/.vim/custom
+alias vset="vim $vimCustom/settings.vim"
+alias vmap="vim $vimCustom/mappings.vim"
+
+# alias for editting git settings files
+alias vgit="vim ~/.gitconfig"
 
 # cd
-alias desk='cd ~/Desktop'
-alias doc='cd ~/Documents'
+alias desk="cd ~/Desktop"
+alias doc="cd ~/Documents"
 
 # files
-alias rrm='rm -rf'
-alias cpp='cp -Rp'
-alias sozsh='source ~/.zshrc'
+alias rrm="rm -rf"
+alias cpp="cp -Rp"
 
 # mkalias on the fly
 ############################
 function mkalias() {
-    echo  "alias $1='$2'" >> ~/dots/zshrc/autoalias.sh;
+    echo  "alias $1=\"$2\" >> $dotZshrc/autoalias.sh";
     source ~/.zshrc
 }
 
@@ -36,6 +42,6 @@ function treel() {
 function treela() {
      tree -La $1 $2
 }
-alias treep='tree --noreport -fp'
-alias treepa='tree --noreport -fpa'
+alias treep="tree --noreport -fp"
+alias treepa="tree --noreport -fpa"
 
