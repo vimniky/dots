@@ -13,6 +13,7 @@ export dotDir=$HOME/dots
 export dotZshrc=$dotDir/zshrc
 export dotVimrc=$dotDir/vimrc
 export dotMongorc=$dotDir/mongorc
+export dotEditorsrc=$dotDir/editorsrc
 
 
 # File search

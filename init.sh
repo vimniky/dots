@@ -5,12 +5,11 @@ dotsRoot=$HOME/dots
 
 # setup mongodb
 echo 'mongobd ....\n'
-dotmongorc=$dotsRoot/mongorc
 
 mongorc=$HOME/.mongorc.js
 if [ ! -L $mongorc  ] ; then
     # if ~/.mongorc.js symbol link doesn't exist , link it !
-    ln -s $dotmongorc/.mongorc.js $HOME
+    ln -s $dotMongorc/.mongorc.js $HOME
     echo "symlink $mongorc done"
 else
     echo "symlink $mongorc symlink already exists !\n"
@@ -19,12 +18,9 @@ fi
 
 # setup vim
 echo 'vim ....\n'
-dotvimrc=$dotsRoot/vimrc
-
 vimrc=$HOME/.vimrc
 if [ ! -L $vimrc  ] ; then
-    ln -s $dotvimrc/.vimrc $HOME
-    ln -s $dotvimrc/.vim $HOME
+    ln -s $dotVimrc/.vimrc $HOME
     echo "symlink $vimrc done"
 else
     echo "symlink $HOME/$vimrc  already exists !\n"
@@ -32,11 +28,18 @@ fi
 
 vimDir=$HOME/.vim
 if [ ! -L $vimDir  ] ; then
-    ln -s $dotvimrc/.vim $HOME
+    ln -s $dotVimrc/.vim $HOME
     echo "symlink $vimDir done"
     echo "symlink $vimDir done"
 else
     echo "symlink $vimDir  already exists !\n"
 fi
 
-
+ideavimrc=$HOME/.ideavimrc
+if [ ! -L $ideavimrc ] ; then
+    ln -s $dotEditorsrc/.ideavimrc $HOME
+    echo "symlink $ideavimrc done"
+    echo "symlink $ideavimrc done"
+else
+    echo "symlink $ideavimrc  already exists !\n"
+fi
