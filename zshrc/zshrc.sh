@@ -7,6 +7,7 @@ export USER_NAME="vimniky"
 . $dotZshrc/autoalias.sh
 . $dotZshrc/functions.sh
 . $dotZshrc/export.sh
+. $dotZshrc/colorman.sh
 
 
 # custom config dirctory of  zsh
@@ -15,6 +16,5 @@ export dotZshrc=$dotDir/zshrc
 export dotVimrc=$dotDir/vimrc
 export dotMongorc=$dotDir/mongorc
 export dotEditorsrc=$dotDir/editorsrc
-
 
 

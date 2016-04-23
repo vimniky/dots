@@ -1,4 +1,8 @@
 # source in zsh configs
+
+alias v='vim'
+alias vi='nvim'
+alias vim='nvim'
 alias sozsh="source ~/.zshrc"
 alias initdot="source $dotDir/init.sh"
 alias vinit="vim $dotDir/init.sh"
@@ -29,4 +33,14 @@ alias cpp="cp -Rp"
 
 alias treep="tree --noreport -fp"
 alias treepa="tree --noreport -fpa"
+
+
+function mydotPaths()  {
+     echo "exported paths : "
+     echo "dotDir : $dotDir "
+     echo "dotZshrc : $dotZshrc "
+     echo "dotVimrc : $dotVimrc "
+     echo "dotMongorc : $dotMongorc "
+     echo "dotEditorsrc : $dotEditorsrc "
+}
 
