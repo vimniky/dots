@@ -3,7 +3,6 @@ inoremap jk <esc>
 "cnoremap <C-g> <esc>
 "xnoremap <C-g> <esc>
 "onoremap <C-g> <esc>
-map <C-g> <esc>
 
 nnoremap Q :q!<cr>
 nnoremap W :w!<cr>
@@ -35,3 +34,11 @@ set clipboard+=unnamed
 "
 "
 set shiftround    "round > and < to mutipuls of shift width*****
+
+" Poor man's surround.vim
+nmap <space>` gewi`<ESC>ea`<ESC>
+nmap <space>' gewi'<ESC>ea'<ESC>
+nmap <space>" gewi"<ESC>ea"<ESC>
+nmap <space>[ gewi[<ESC>ea]<ESC>
+nmap <space>( gewi(<ESC>ea)<ESC>
+nmap <space>{ gewi{<ESC>ea}<ESC>

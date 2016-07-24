@@ -8,6 +8,7 @@ export USER_NAME="vimniky"
 . $dotZshrc/functions.sh
 . $dotZshrc/export.sh
 . $dotZshrc/colorman.sh
+#. $dotZshrc/vim-mappings.sh
 # 
 eval "$(hub alias -s)"
 
