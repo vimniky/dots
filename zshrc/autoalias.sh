@@ -1,3 +1,10 @@
+
+# override default
+alias cp="cp -vi"
+alias ls="ls -GAp"
+alias mv="mv -vi"
+alias rm="rm -v"
+
 alias pserver='python -m SimpleHTTPServer'
 alias gmm='git commit -m'
 alias py='python'
@@ -12,6 +19,7 @@ alias oa="open -a"
 alias sb="/Applications/lambda.app/Contents/SharedSupport/bin/subl"
 alias oaf="open -a Finder"
 alias gg="open -a Google\ Chrome"
+alias gs="git status -sb"
 alias if0="ifconfig en0"
 alias rn="react-native"
 alias npmlink="npm-link-shared ~/nodejs/node_modules/ ./"
