@@ -1,0 +1,53 @@
+inoremap jk <esc>
+set incsearch
+" Case-insensitive searching.
+set ignorecase
+set smartcase
+
+" Default to global substitutions on lines
+set gdefault
+
+set blinkcursor
+
+" Use the system pasteboard
+set pasteboard
+set clipboard=unnamed
+
+set laststatus=0
+
+nnoremap ; :
+" Map <space>b to toggle a breakpoint at the current line
+nmap <space>b :xccmd toggleBreakpointAtCurrentLine<CR>
+
+" Use <space>cm to toggle comments for the selection
+nmap <space>cm :xccmd commentAndUncommentCurrentLines<CR>
+nmap Y y$
+
+" Poor man's surround.vim
+nmap <space>` gewi`<ESC>ea`<ESC>
+nmap <space>' gewi'<ESC>ea'<ESC>
+nmap <space>" gewi"<ESC>ea"<ESC>
+nmap <space>[ gewi[<ESC>ea]<ESC>
+
+" Navigation
+nmap <space>f :xcmenucmd Open Quickly...<CR>
+nmap <space>n :nissue<CR>
+nmap <space>p :pissue<CR>
+nmap <space>i :xcmenucmd Jump to Generated Interface<CR>
+
+" Windows
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Show
+nmap <space>g :xcmenucmd History...<CR>
+nmap <space>F :xccmd showInFinder<CR>
+nmap <space>D :xccmd showDeveloperDocumentation<CR>
+nmap <space>d :xcmenucmd Quick Help for Selected Item<CR>
+
+" Toggle Toolbars
+nmap <space>h :xccmd toggleNavigatorsVisibility<CR>
+nmap <space>j :xccmd toggleDebuggerVisibility<CR>
+nmap <space>l :xccmd toggleUtilitiesVisibility<CR>

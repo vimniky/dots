@@ -1,15 +1,15 @@
 inoremap jk <esc>
-noremap <C-g> <esc>
-cnoremap <C-g> <esc>
-xnoremap <C-g> <esc>
-onoremap <C-g> <esc>
+"noremap <C-g> <esc>
+"cnoremap <C-g> <esc>
+"xnoremap <C-g> <esc>
+"onoremap <C-g> <esc>
+map <C-g> <esc>
 
 nnoremap Q :q!<cr>
 nnoremap W :w!<cr>
 nnoremap Z ZZ
 nnoremap U :redo<cr>
-
-nnoremap <cr> A<cr><esc>
+nnoremap <cr> o<esc>
 
 " <|>: reselect visual block after indent *****
 xnoremap < <gv

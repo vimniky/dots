@@ -25,3 +25,10 @@ function treel() {
 function treela() {
      tree -La $1 $2
 }
+
+
+# set up doc shell env
+eval "$(docker-machine env default)"
+#function docdefault() {
+  #eval "$(docker-machine env default)"
+#}
