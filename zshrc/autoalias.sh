@@ -38,4 +38,3 @@ alias find-files="mdfind -onlyin"
 
 alias openssl-gen="openssl req -x509 -days 365 -newkey rsa:1024 -out my.cert -keyout my.key"
 alias gcl="git clone"
-alias e="emacsclient -c"
