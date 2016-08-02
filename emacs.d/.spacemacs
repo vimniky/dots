@@ -34,12 +34,14 @@ values."
      html
      eyebrowse
      vim-powerline
+     restclient
      ;; markdown
      ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
+     (shell :variables
+            shell-default-term-shell "/bin/zsh"
+            shell-default-height 30
+            shell-default-position 'bottom)
+     spell-checking
      syntax-checking
      '(version-control :variables
                        version-control-diff-tool 'diff-hl
@@ -243,6 +245,12 @@ values."
    ))
 
 (defun dotspacemacs/user-init ()
+
+  ;; frame size and position
+  (setq default-frame-alist
+        '((top . 0) (left . 200)
+          (width . 150) (height . 50)
+          ))
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init', before layer configuration
 executes.
@@ -260,7 +268,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   ;; display filled block cursor: bar/block/box
   (setq-default evil-insert-state-cursor '("orange" box))
-  (setq-default evil-normal-state-cursor '("red" block))
+  (setq-default evil-normal-state-cursor '("red" box))
   ;; just don't ask me again !
   (setq vc-follow-symlinks nil)
   ;; js and jsx indentation config: see frameworks/react-layer
