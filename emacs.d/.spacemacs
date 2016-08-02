@@ -27,14 +27,23 @@ values."
      ;; better-defaults
      emacs-lisp
      git
+     osx
+     haskell
+     javascript
+     react
+     html
+     eyebrowse
+     vim-powerline
      ;; markdown
      ;; org
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     spell-checking
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
+     ;; spell-checking
      syntax-checking
-     version-control
+     '(version-control :variables
+                       version-control-diff-tool 'diff-hl
+                       version-control-global-margin t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -240,10 +249,39 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  ;; disable js2-mode strict warning
+  (setq js2-mode-show-strict-warnings nil)
   )
 
 (defun dotspacemacs/user-config ()
   (setq-default evil-escape-key-sequence "jk")
+  ;; This will allow you to use the right ⌥ key to write symbols
+  (setq-default mac-right-option-modifier nil)
+
+  ;; display filled block cursor: bar/block/box
+  (setq-default evil-insert-state-cursor '("orange" box))
+  (setq-default evil-normal-state-cursor '("red" block))
+  ;; just don't ask me again !
+  (setq vc-follow-symlinks nil)
+  ;; js and jsx indentation config: see frameworks/react-layer
+  (setq-default
+   ;; js2-mode
+   js2-basic-offset 2
+   js-indent-level 2
+   ;; web-mode
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
+
+  (with-eval-after-load 'web-mode
+    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+
+  ;; reload file when change
+  (global-auto-revert-mode t)
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration.
