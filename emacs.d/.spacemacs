@@ -30,6 +30,7 @@ values."
      osx
      haskell
      (haskell :variables haskell-enable-ghc-mod-support t
+              haskell-process-type 'stack-ghci
               haskell-enable-hindent-style "johan-tibell")
      ;; https://github.com/syl20bnr/spacemacs/pull/5078
      ;; ghc-mod don't play well with evil mode
@@ -43,7 +44,6 @@ values."
      vim-powerline
      restclient
      yaml
-     spacemacs-helm
      ;; markdown
      ;; org
      (shell :variables
@@ -255,6 +255,8 @@ values."
 
 (defun dotspacemacs/user-init ()
 
+  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+  (add-to-list 'exec-path "~/.local/bin")
   ;; frame size and position
   (setq default-frame-alist
         '((top . 0) (left . 200)
@@ -274,7 +276,12 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq-default evil-escape-key-sequence "jk")
   ;; This will allow you to use the right ⌥ key to write symbols
   (setq-default mac-right-option-modifier nil)
-
+  ;; decrease delay before autocompletion popup shows
+  (setq company-idle-delay .3)
+  ;; remove annoying blinking
+  (setq company-echo-delay 0)
+  (setq-default fill-column 120)
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
   ;; display filled block cursor: bar/block/box
   (setq-default evil-insert-state-cursor '("orange" box))
   (setq-default evil-normal-state-cursor '("red" box))
