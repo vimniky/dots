@@ -132,7 +132,7 @@ values."
    ;; "Monaco"
    ;; "Pt Mono"
    ;; "Inconsolata-dz for Powerline"
-   dotspacemacs-default-font '("Courier New"
+   dotspacemacs-default-font '("Pt Mono"
                                :size 13
                                :weight normal
                                :width normal

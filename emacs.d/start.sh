@@ -1,13 +1,15 @@
 #!/bin/bash
-EMACSPATH=/Applications/Emacs.app/Contents/MacOS
+# EMACSPATH=/Applications/Emacs.app/Contents/MacOS
+EMACSPATH=/usr/local/Cellar/emacs-mac/emacs-25.1-rc1-mac-5.90/Emacs.app/Contents/MacOS
 
-# Check if an emacs server is available 
+
+# Check if an emacs server is available
 # (by checking to see if it will evaluate a lisp statement)
 
 if ! (${EMACSPATH}/bin/emacsclient --eval "t"  2> /dev/null > /dev/null )
 then
     # There is no server available so,
-    # Start Emacs.app detached from the terminal 
+    # Start Emacs.app detached from the terminal
     # and change Emac's directory to PWD
 
     nohup ${EMACSPATH}/Emacs --chdir "${PWD}" "${PWD}/${@}" 2>&1 > /dev/null &
@@ -20,7 +22,7 @@ else
         # tell emacs to open a new window
 
         ${EMACSPATH}/bin/emacsclient --eval "(list-directory \"${PWD}\")"
-    else    
+    else
         # There are arguments, so
         # tell emacs to open them
 
