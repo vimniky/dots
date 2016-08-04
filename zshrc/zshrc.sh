@@ -21,6 +21,7 @@ export dotHaskell=$dotDir/haskell
 . $dotZshrc/export.sh
 . $dotZshrc/colorman.sh
 . $dotHaskell/alias.sh
+. $dotDir/emacs.d/emacs.sh
 
 ## autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
