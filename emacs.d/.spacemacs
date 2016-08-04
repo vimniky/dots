@@ -23,7 +23,13 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
+     ;; auto-completion
+     (auto-completion :variables
+                      auto-completion-return-key-behavior nil
+                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-complete-with-key-sequence nil
+                      auto-completion-complete-with-key-sequence-delay 0.1
+                      auto-completion-private-snippets-directory nil)
      ;; better-defaults
      emacs-lisp
      git
@@ -115,11 +121,11 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(leuven
+                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
-                         leuven
                          monokai
                          zenburn)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
@@ -264,8 +270,8 @@ values."
   (add-to-list 'exec-path "~/.local/bin")
   ;; frame size and position
   (setq default-frame-alist
-        '((top . 0) (left . 200)
-          (width . 150) (height . 50)
+        '((top . 0) (left . 150)
+          (width . 130) (height . 45)
           ))
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init', before layer configuration
@@ -292,6 +298,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq-default evil-normal-state-cursor '("red" box))
   ;; just don't ask me again !
   (setq vc-follow-symlinks nil)
+  ;; try to make emmet works in react-mod
+  ;; (add-hook 'react-mode-hook 'emmet-mode)
+  ;; (add-hook 'react-mode-hook 'js2-mode-hide-warnings-and-errors)
   ;; js and jsx indentation config: see frameworks/react-layer
   (setq-default
    ;; js2-mode
