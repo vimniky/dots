@@ -21,6 +21,7 @@ export dotHaskell=$dotDir/haskell
 . $dotZshrc/export.sh
 . $dotZshrc/colorman.sh
 . $dotHaskell/alias.sh
+. $dotHaskell/setup.sh
 . $dotDir/emacs.d/emacs.sh
 
 ## autojump

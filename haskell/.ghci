@@ -5,10 +5,8 @@ import Data.String
 import Data.Char
 import Data.List
 import Data.Monoid
-import Control.Monad.IO.Class
 
 :set prompt "λ >> "
-
 :set -fno-warn-unused-imports
 :def hlint const . return $ ":! hlint \"src\""
 :def! hoogle \s -> return $ ":! hoogle --color --count=15 \"" ++ s ++ "\""
