@@ -8,5 +8,3 @@ export dotZshrc=$dotDir/zshrc
 $ cd ~/dots
 $ ./init.sh
 ```
-
-all set !
