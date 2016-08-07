@@ -259,9 +259,14 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
 (defun dotspacemacs/user-config ()
   (setq-default evil-escape-key-sequence "jk")
+  ;; remap j, k
+  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
   ;; display filled block cursor: bar/block/box
   (setq-default evil-insert-state-cursor '("orange" box))
   (setq-default evil-normal-state-cursor '("red" box))
+  (define-key evil-normal-state-map "U" 'undo-tree-redo)
 
   ;; makes eshell nicer
   (defun my-eshell-mode-faces ()
@@ -270,8 +275,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (add-hook 'eshell-mode-hook 'my-eshell-mode-faces-work)
 
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
-  ;; enable smartparent in haskell mode
-  (add-hook 'haskell-mode-hook 'smartparens)
 
   ;; reload file when change
   (global-auto-revert-mode t)
