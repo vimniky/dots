@@ -23,44 +23,25 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
-     (auto-completion :variables
-                      auto-completion-return-key-behavior nil
-                      auto-completion-tab-key-behavior 'cycle
-                      auto-completion-complete-with-key-sequence nil
-                      auto-completion-complete-with-key-sequence-delay 0.1
-                      auto-completion-private-snippets-directory nil)
+     auto-completion
      ;; better-defaults
      emacs-lisp
-     git
-     osx
-     haskell
-     (haskell :variables haskell-enable-ghc-mod-support t
-              haskell-process-type 'stack-ghci
-              haskell-enable-hindent-style "johan-tibell")
-     ;; https://github.com/syl20bnr/spacemacs/pull/5078
-     ;; ghc-mod don't play well with evil mode
-     ;; (haskell: variable haskell-enable-ghci-ng-support t
-     ;;           haskell-enable-shm-support t
-     ;;           haskell-enable-hindent-style "johan-tibell")
-     javascript
-     react
-     html
-     eyebrowse
-     vim-powerline
-     restclient
-     yaml
+     ;; git
      ;; markdown
      ;; org
+     yaml
+     osx
+     vim-powerline
+     (haskell :variables haskell-enable-ghc-mod-support t
+              haskell-process-type 'stack-ghci
+              ;; haskell-enable-shm-support t
+              haskell-enable-hindent-style "johan-tibell")
      (shell :variables
-            shell-default-term-shell "/bin/zsh"
-            shell-default-height 30
-            shell-default-position 'bottom)
+            ;; shell-default-height 30
+            shell-default-position 'right)
      spell-checking
-     syntax-checking
-     '(version-control :variables
-                       version-control-diff-tool 'diff-hl
-                       version-control-global-margin t)
+     ;; syntax-checking
+     ;; version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -121,11 +102,11 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(leuven
-                         spacemacs-dark
+   dotspacemacs-themes '(spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
+                         leuven
                          monokai
                          zenburn)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
@@ -143,6 +124,7 @@ values."
                                :weight normal
                                :width normal
                                :powerline-scale 0.8)
+   ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
    ;; (default "M-m")
@@ -265,43 +247,39 @@ values."
    ))
 
 (defun dotspacemacs/user-init ()
-
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-  (add-to-list 'exec-path "~/.local/bin")
-  ;; frame size and position
-  (setq default-frame-alist
-        '((top . 0) (left . 150)
-          (width . 130) (height . 45)
-          ))
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init', before layer configuration
 executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  ;; disable js2-mode strict warning
-  (setq js2-mode-show-strict-warnings nil)
   )
 
 (defun dotspacemacs/user-config ()
   (setq-default evil-escape-key-sequence "jk")
-  ;; This will allow you to use the right ⌥ key to write symbols
-  (setq-default mac-right-option-modifier nil)
-  ;; decrease delay before autocompletion popup shows
-  (setq company-idle-delay .3)
-  ;; remove annoying blinking
-  (setq company-echo-delay 0)
-  (setq-default fill-column 120)
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
   ;; display filled block cursor: bar/block/box
   (setq-default evil-insert-state-cursor '("orange" box))
   (setq-default evil-normal-state-cursor '("red" box))
+
+  ;; makes eshell nicer
+  (defun my-eshell-mode-faces ()
+    (face-remap-add-relative 'default '((:foreground "#BD9700")))
+    (face-remap-add-relative 'eshell-prompt '((:foreground "#BD9700" :weight bold))))
+  (add-hook 'eshell-mode-hook 'my-eshell-mode-faces-work)
+
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+  ;; enable smartparent in haskell mode
+  (add-hook 'haskell-mode-hook 'smartparens)
+
+  ;; reload file when change
+  (global-auto-revert-mode t)
+
   ;; just don't ask me again !
   (setq vc-follow-symlinks nil)
-  ;; try to make emmet works in react-mod
-  ;; (add-hook 'react-mode-hook 'emmet-mode)
-  ;; (add-hook 'react-mode-hook 'js2-mode-hide-warnings-and-errors)
-  ;; js and jsx indentation config: see frameworks/react-layer
+
+  ;; remove annoying blinking
+  (setq company-echo-delay 0)
+
   (setq-default
    ;; js2-mode
    js2-basic-offset 2
@@ -312,14 +290,19 @@ before packages are loaded. If you are unsure, you should try in setting them in
    web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
+  ;; only display file name
+  ;; (setq frame-title-format "%b")
+  ;; display full file path
+  (setq frame-title-format
+        '(:eval
+          (if buffer-file-name
+              (replace-regexp-in-string
+               "\\\\" "/"
+               (replace-regexp-in-string
+                (regexp-quote (getenv "HOME")) "~"
+                (convert-standard-filename buffer-file-name)))
+            (buffer-name))))
 
-  (with-eval-after-load 'web-mode
-    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
-
-  ;; reload file when change
-  (global-auto-revert-mode t)
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration.
@@ -335,9 +318,14 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
+ '(hl-sexp-background-color "#efebe9")
  '(package-selected-packages
    (quote
-    (yaml-mode shm hindent haskell-snippets flycheck-haskell company-ghc ghc haskell-mode company-cabal cmm-mode zenburn-theme xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package tagedit spacemacs-theme spaceline solarized-theme smooth-scrolling smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restclient restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el pbcopy paradox page-break-lines osx-trash orgit open-junk-file neotree multi-term move-text monokai-theme magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme less-css-mode launchctl json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help emmet-mode elisp-slime-nav define-word company-web company-tern company-statistics company-quickhelp coffee-mode clean-aindent-mode buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (mmm-mode markdown-toc markdown-mode gh-md reveal-in-osx-finder pbcopy osx-trash launchctl flycheck-pos-tip flycheck-haskell flycheck xterm-color shell-pop multi-term eshell-prompt-extras esh-help monokai-theme helm-flyspell helm-company helm-c-yasnippet company-statistics company-quickhelp pos-tip company-ghc company-cabal company auto-yasnippet auto-dictionary ac-ispell auto-complete shm hindent haskell-snippets yasnippet ghc haskell-mode cmm-mode ws-butler window-numbering volatile-highlights vi-tilde-fringe spaceline s powerline smooth-scrolling restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox hydra spinner page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
