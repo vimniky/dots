@@ -40,3 +40,4 @@ alias openssl-gen="openssl req -x509 -days 365 -newkey rsa:1024 -out my.cert -ke
 alias gcl="git clone"
 alias ot="open -a iTerm"
 alias untar="tar xzf"
+alias nodeh="node --harmony"
