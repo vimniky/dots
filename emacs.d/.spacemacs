@@ -97,7 +97,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner nil
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
@@ -261,26 +261,36 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (setq-default git-magit-status-fullscreen t)
-  (setq js2-strict-missing-semi-warning nil)
   )
 
 (defun dotspacemacs/user-config ()
+  ;; ---------------------------------------
+  ;; Key mappings
+  ;; ---------------------------------------
   (setq-default evil-escape-key-sequence "jk")
   ;; remap j, k
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char)
+  (define-key evil-normal-state-map "U" 'undo-tree-redo)
 
+
+  ;; ---------------------------------------
+  ;; Style
+  ;; ---------------------------------------
   ;; display filled block cursor: bar/block/box
   (setq-default evil-insert-state-cursor '("orange" box))
   (setq-default evil-normal-state-cursor '("red" box))
-  (define-key evil-normal-state-map "U" 'undo-tree-redo)
+  (setq-default git-magit-status-fullscreen t)
+  (setq-default line-spacing 2)
+  ;; remove annoying blinking
+  (setq company-echo-delay 0)
 
   ;; makes eshell nicer
   (defun my-eshell-mode-faces ()
     (face-remap-add-relative 'default '((:foreground "#BD9700")))
     (face-remap-add-relative 'eshell-prompt '((:foreground "#BD9700" :weight bold))))
-  (add-hook 'eshell-mode-hook 'my-eshell-mode-faces-work)
+  (add-hook 'eshell-mode-hook 'my-eshell-mode-faces)
 
   ;; reload file when change
   (global-auto-revert-mode t)
@@ -288,13 +298,19 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; just don't ask me again !
   (setq vc-follow-symlinks nil)
 
-  ;; remove annoying blinking
-  (setq company-echo-delay 0)
+  ;; ---------------------------------------
+  ;; Langs frameworks
+  ;; ---------------------------------------
 
+  ;; elm
   (with-eval-after-load 'company
     (add-to-list 'company-backends 'company-elm))
-  ;; react-mode
+
+  ;; react
   (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
+
+  ;; javascript
+  (setq js2-strict-missing-semi-warning nil)
   (setq-default
    ;; js2-mode
    js2-basic-offset 2
@@ -305,6 +321,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
    web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
+
   ;; only display file name
   ;; (setq frame-title-format "%b")
   ;; display full file path
