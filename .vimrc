@@ -12,24 +12,17 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 "set runtimepath+=~/dots/vim/.vim/bundle/neobundle.vim
 "call neobundle#begin(expand('~/dots/vim/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-"""""""""""""""""""""""""""""""""""
-"motions and operators
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'glts/vim-textobj-indblock'
 NeoBundle 'saihoooooooo/vim-textobj-space'
-"NeoBundle 'spiiph/vim-space'
-"NeoBundle 'tommcdo/vim-exchange'
 NeoBundle 'glts/vim-textobj-comment'
 NeoBundle 'Julian/vim-textobj-brace'
 NeoBundle 'kana/vim-textobj-function'
 NeoBundle 'terryma/vim-expand-region'
-
 NeoBundle 'Shougo/unite.vim'
-
-"register
 NeoBundle 'YankRing.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'jiangmiao/auto-pairs'
@@ -37,10 +30,9 @@ NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'myusuf3/numbers.vim'
 NeoBundle 'Yggdroot/indentLine'
 
-"language
-"NeoBundle 'scrooloose/syntastic'
-"NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
-"NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'scrooloose/syntastic'
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'moll/vim-node'
@@ -50,18 +42,13 @@ NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'leafgarland/typescript-vim'
-
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-endwise'
-"NeoBundle 'tpope/vim-rails'
-"NeoBundle 'tpope/vim-bundler'
-
-
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-bundler'
 NeoBundle 'paredit.vim'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'isRuslan/vim-es6'
-
-"utils
 NeoBundle 'danro/rename.vim'
 
 """"""""""""""""""""""""""""""""""
@@ -100,8 +87,6 @@ set modelines=1
 syntax enable
 set guifont=Monaco:h15
 
-
-
 inoremap jk <esc>
 noremap <C-g> <esc>
 cnoremap <C-g> <esc>
@@ -112,8 +97,6 @@ nnoremap Q :q!<cr>
 nnoremap W :w!<cr>
 nnoremap Z ZZ
 nnoremap U :redo<cr>
-
-nnoremap <cr> A<cr><esc>
 
 " <|>: reselect visual block after indent *****
 xnoremap < <gv
@@ -130,12 +113,6 @@ nnoremap <leader>P ^Pa<space><esc>
 
 " system clipboard support
 set clipboard+=unnamed
-"nnoremap yy "+yy
-"vnoremap y "+y
-"nnoremap p "+p
-"vnoremap p "+p
-"nnoremap P "+P
-"vnoremap P "+P
 
 "so ~/.vim/custom/plugins-setting.vim
 so ~/.vim/custom/settings.vim

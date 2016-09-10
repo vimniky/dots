@@ -1,16 +1,10 @@
-# export MANPATH="/usr/local/man:$MANPATH"
 export USER_NAME="vimniky"
-
-#. $dotZshrc/vim-mappings.sh
 
 eval "$(hub alias -s)"
 
 # custom config dirctory of  zsh
 export dotDir=$HOME/dots
 export dotZshrc=$dotDir/zshrc
-export dotVimrc=$dotDir/vimrc
-export dotMongorc=$dotDir/mongorc
-export dotEditorsrc=$dotDir/editorsrc
 export dotHaskell=$dotDir/haskell
 
 # source in other custom setting files

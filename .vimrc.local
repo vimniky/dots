@@ -1,0 +1,17 @@
+inoremap jk <esc>
+noremap <C-g> <esc>
+cnoremap <C-g> <esc>
+xnoremap <C-g> <esc>
+onoremap <C-g> <esc>
+nnoremap Q :q!<cr>
+nnoremap W :w!<cr>
+nnoremap Z ZZ
+nnoremap U :redo<cr>
+" colortheme
+colorscheme gruvbox
+
+" file-indentation
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype coffeescript setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype jade setlocal ts=2 sw=2 sts=0 expandtabb files, 2 spaces
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
