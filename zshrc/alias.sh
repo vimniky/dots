@@ -3,7 +3,7 @@
 alias sozsh="source ~/.zshrc"
 alias initdot="source $dotDir/init.sh"
 alias vinit="vim $dotDir/init.sh"
-
+alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw &>/dev/null"
 # alias for editting zsh settings files
 alias vzshrc="vim ~/.zshrc"
 alias valias="vim $dotZshrc/alias.sh"

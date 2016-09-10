@@ -1,4 +1,3 @@
-export PATH="$HOME/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 export USER_NAME="vimniky"
 
@@ -18,11 +17,9 @@ export dotHaskell=$dotDir/haskell
 . $dotZshrc/alias.sh
 . $dotZshrc/autoalias.sh
 . $dotZshrc/functions.sh
-. $dotZshrc/export.sh
 . $dotZshrc/colorman.sh
 . $dotHaskell/alias.sh
 . $dotHaskell/setup.sh
-. $dotDir/emacs.d/emacs.sh
 
 ## autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh

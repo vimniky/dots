@@ -1,9 +1,6 @@
 
 # override default
-alias cp="cp -vi"
 alias ls="ls -GAp"
-alias mv="mv -vi"
-alias rm="rm -v"
 
 alias pserver='python -m SimpleHTTPServer'
 alias gmm='git commit -m'
@@ -26,7 +23,6 @@ alias npmlink="npm-link-shared ~/nodejs/node_modules/ ./"
 
 # docker alias
 alias dm="docker-machine"
-alias d="docker"
 
 function drmall() {
   docker rm -v $(docker ps -aq -f status=exited)

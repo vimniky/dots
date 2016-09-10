@@ -1,0 +1,17 @@
+# split panes using | and -
+bind | split-window -h
+bind - split-window -v
+unbind '"'
+unbind %
+
+# The panes 
+set -g pane-border-bg colour235
+set -g pane-border-fg colour238
+set -g pane-active-border-bg colour236
+set -g pane-active-border-fg colour51
+
+# messaging
+set -g message-fg black
+set -g message-bg yellow
+set -g message-command-fg blue
+set -g message-command-bg black
