@@ -1,5 +1,3 @@
-export PATH="$HOME/Library/Haskell/bin:$PATH"
-
 # stack zsh autocompletion for
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit

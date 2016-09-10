@@ -9,9 +9,9 @@ function take() { mkdir -p "$@" && cd "$_";}
 ############################
 function mkalias() {
     if [ $3 ] ;then 
-        echo  "#$3" >> "$dotZshrc/autoalias.sh";
+        echo  "#$3" >> "~/dots/autoalias.sh";
     fi
-    echo  "alias $1=\"$2\"" >> "$dotZshrc/autoalias.sh";
+    echo  "alias $1=\"$2\"" >> "~/dots/autoalias.sh";
 
     source ~/.zshrc
 }
