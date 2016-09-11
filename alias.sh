@@ -1,4 +1,5 @@
 alias vim-install-boundle="vim +BundleInstall! +BundleClean +q"
+alias vbundles="vim ~/.vimrc.bundles.local"
 alias ls="ls -GAp"
 alias o="open"
 alias sozsh="source ~/.zshrc"
