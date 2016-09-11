@@ -39,3 +39,6 @@ autocmd User Node
   \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
   \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
   \ endif
+
+" syntax for javacsript libraries
+let g:used_javascript_libs = 'underscore,jQurey,lo-dash,react,requireJs'
