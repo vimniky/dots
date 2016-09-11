@@ -7,6 +7,10 @@ nnoremap Q :q!<cr>
 nnoremap ; :
 nnoremap W :w!<cr>
 nnoremap Z ZZ
+" EasyMotion mapping
+nmap <space>jj ,,s
+nmap <space>jw ,,w
+
 " buffers
 nnoremap [b :bp<cr>
 nnoremap ]b :bn<cr>
@@ -15,7 +19,7 @@ nnoremap <C-W>m <C-W>\|<C-W>_
 
 " colortheme
 colorscheme gruvbox
-
+colorscheme molokai
 " file-indentation
 augroup filetype_web_dev
     autocmd!
