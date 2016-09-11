@@ -1,8 +1,8 @@
 # source in other custom setting files
-. ./alias.sh
-. ./functions.sh
-. ./colorman.sh
-. ./haskell.sh
+. "$HOME/dots/alias.sh"
+. "$HOME/dots/functions.sh"
+. "$HOME/dots/colorman.sh"
+. "$HOME/dots/haskell.sh"
 
 eval "$(hub alias -s)"
 

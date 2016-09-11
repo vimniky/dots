@@ -68,7 +68,7 @@ alias map="xargs -n1"
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=aut
+alias egrep='egrep --color=aut'
 
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
