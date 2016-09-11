@@ -53,7 +53,17 @@ ZSH_THEME="vimniky"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z docker docker-compose zsh-autosuggestions alias-tips emacs tmux)
+plugins=(
+    git
+    z
+    docker
+    docker-compose
+    zsh-autosuggestions
+    alias-tips
+    emacs
+    tmux
+    zsh-completions
+)
 
 
 # User configuration
