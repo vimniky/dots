@@ -1,10 +1,3 @@
-
-"""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""
-"checkout https://github.com/Shougo/neobundle.vim for more
-"""""""""""""""""""""""""""""""""""
-
-
 set nocompatible
 set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -82,39 +75,7 @@ filetype plugin indent on
 autocmd!  BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc,~/.vim/custom/*
       \ so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 
-"use a modeline to make Vim only use these settings for this file.
-set modelines=1
-syntax enable
-set guifont=Monaco:h15
-
-inoremap jk <esc>
-noremap <C-g> <esc>
-cnoremap <C-g> <esc>
-xnoremap <C-g> <esc>
-onoremap <C-g> <esc>
-
-nnoremap Q :q!<cr>
-nnoremap W :w!<cr>
-nnoremap Z ZZ
-nnoremap U :redo<cr>
-
-" <|>: reselect visual block after indent *****
-xnoremap < <gv
-xnoremap > >gv
-nmap <d-[> <<
-nmap <d-]> >>
-
-"automatically jump to end of text you pasted:
-vnoremap <silent> y y`]
-vnoremap <silent> p p`]
-nnoremap <silent> p p`]
-nnoremap <leader>p A<space><esc>p
-nnoremap <leader>P ^Pa<space><esc>
-
-" system clipboard support
-set clipboard+=unnamed
-
-"so ~/.vim/custom/plugins-setting.vim
+so ~/.vim/custom/plugins-setting.vim
 so ~/.vim/custom/settings.vim
 so ~/.vim/custom/mappings.vim
 so ~/.vim/custom/split-windows.vim
