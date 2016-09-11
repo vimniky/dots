@@ -4,6 +4,7 @@ cnoremap <C-g> <esc>
 xnoremap <C-g> <esc>
 onoremap <C-g> <esc>
 nnoremap Q :q!<cr>
+nnoremap ; :
 nnoremap W :w!<cr>
 nnoremap Z ZZ
 nnoremap U :redo<cr>
