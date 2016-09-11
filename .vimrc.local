@@ -8,6 +8,10 @@ nnoremap ; :
 nnoremap W :w!<cr>
 nnoremap Z ZZ
 nnoremap U :redo<cr>
+" buffers
+nnoremap [b :bp<cr>
+nnoremap ]b :bn<cr>
+
 " colortheme
 colorscheme gruvbox
 
@@ -43,3 +47,5 @@ autocmd User Node
 " syntax for javacsript libraries
 " https://github.com/othree/javascript-libraries-syntax.vim
 let g:used_javascript_libs = 'jquery,underscore,react,requirejs'
+
+set rtp+=~/.fzf
