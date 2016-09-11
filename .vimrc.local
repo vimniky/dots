@@ -30,3 +30,12 @@ let g:neocomplete#sources#syntax#min_keyword_length = 1
 " <C-j> <C-k> to cycle autocomplete cadidators
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
+
+" vim-node customize
+" https://github.com/moll/vim-node
+"<C-w>f to open the file under the cursor in a new vertical split
+autocmd User Node
+  \ if &filetype == "javascript" |
+  \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
+  \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
+  \ endif
