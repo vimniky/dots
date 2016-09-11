@@ -41,4 +41,5 @@ autocmd User Node
   \ endif
 
 " syntax for javacsript libraries
-let g:used_javascript_libs = 'underscore,jQurey,lo-dash,react,requireJs'
+" https://github.com/othree/javascript-libraries-syntax.vim
+let g:used_javascript_libs = 'jquery,underscore,react,requirejs'
