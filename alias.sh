@@ -16,6 +16,7 @@ alias dm="docker-machine"
 alias ghc-sandbox="ghc -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
 alias ghci-sandbox="ghci -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
 alias runhaskell-sandbox="runhaskell -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
+# git alias
 alias gmm='git commit -m'
 alias pserver='python -m SimpleHTTPServer'
 #alias for 'brew services'
