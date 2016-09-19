@@ -12,6 +12,10 @@ function use-docker-for-mac() {
   unset DOCKER_MACHINE_NAME
   unset DOCKER_HOST
 }
+# remove all exited docker containers
+function docker-rm-all-exited-containers() {
+  docker rm -v $(docker ps -aq -f status=exited)
+}
 
 # mkdir and cd 
 function take() { mkdir -p "$@" && cd "$_";}

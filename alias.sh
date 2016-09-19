@@ -26,9 +26,6 @@ alias sb="/Applications/lambda.app/Contents/SharedSupport/bin/subl"
 alias oaf="open -a Finder"
 alias gg="open -a Google\ Chrome"
 alias if0="ifconfig en0"
-function drmall() {
-  docker rm -v $(docker ps -aq -f status=exited)
-}
 alias subdir="~/Library/Application\ Support/Sublime\ Text\ 3"
 alias find-files="mdfind -onlyin"
 #log
