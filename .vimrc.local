@@ -20,6 +20,7 @@ nnoremap <C-W>m <C-W>\|<C-W>_
 " colortheme
 colorscheme gruvbox
 colorscheme molokai
+highlight Visual term=reverse cterm=reverse guibg=Grey
 " file-indentation
 augroup filetype_web_dev
     autocmd!
@@ -58,4 +59,4 @@ autocmd User Node
 let g:used_javascript_libs = 'jquery,underscore,react,requirejs'
 
 set rtp+=~/.fzf
-
+set nospell

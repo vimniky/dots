@@ -26,13 +26,6 @@ function treela() {
      tree -La $1 $2
 }
 
-
-# set up doc shell env
-eval "$(docker-machine env default)"
-#function docdefault() {
-  #eval "$(docker-machine env default)"
-#}
-
 # Go to the open Finder window's path
 function cdf {
     target=`osascript -e 'tell application "Finder" to get POSIX path of (target of front Finder window as text)'`
