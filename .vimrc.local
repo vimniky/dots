@@ -1,3 +1,4 @@
+let mapleader = "\<Space>"
 inoremap jk <esc>
 noremap <C-g> <esc>
 cnoremap <C-g> <esc>
@@ -7,10 +8,6 @@ nnoremap Q :q!<cr>
 nnoremap ; :
 nnoremap W :w!<cr>
 nnoremap Z ZZ
-" EasyMotion mapping
-nmap <space>jj ,,s
-nmap <space>jw ,,w
-
 " buffers
 nnoremap [b :bp<cr>
 nnoremap ]b :bn<cr>
