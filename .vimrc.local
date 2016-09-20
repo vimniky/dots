@@ -1,4 +1,5 @@
 let mapleader = "\<Space>"
+set wrap
 inoremap jk <esc>
 noremap <C-g> <esc>
 cnoremap <C-g> <esc>
