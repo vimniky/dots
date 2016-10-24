@@ -11,6 +11,8 @@ export editor=vim
 # This loads nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
+# yarn
+export PATH="$PATH:$HOME/.yarn/bin"
 
 export dbConf=/usr/local/etc/mongod.conf
 export dbPath=/usr/local/var/mongodb
