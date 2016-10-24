@@ -9,11 +9,19 @@ nnoremap Q :q!<cr>
 nnoremap ; :
 nnoremap W :w!<cr>
 nnoremap Z ZZ
+inoremap <C-f> <C-o>l
+inoremap <C-b> <C-o>h
+inoremap <C-e> <C-o>A
+inoremap <C-a> <C-o>I
+inoremap <C-u> <C-o>S
+
 " buffers
 nnoremap [b :bp<cr>
 nnoremap ]b :bn<cr>
 " <C-W>m to maximize window
 nnoremap <C-W>m <C-W>\|<C-W>_
+" put vim into background
+nnoremap \\ <C-z>
 
 " colortheme
 colorscheme gruvbox
