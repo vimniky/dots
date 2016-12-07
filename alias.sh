@@ -7,6 +7,7 @@ alias dirs='dirs -v'
 alias sozsh="source ~/.zshrc"
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw &>/dev/null"
 alias vimrc="vim ~/.vimrc.local"
+alias vi="vim"
 alias desk="cd ~/Desktop"
 alias valias="vim ~/dots/alias.sh"
 alias untar="tar xzf"
