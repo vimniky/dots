@@ -4,6 +4,7 @@ export ZSH=/Users/vimniky/.oh-my-zsh
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
+export PATH="/Applications/racket/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export USER_NAME="vimniky"
 export editor=vim
