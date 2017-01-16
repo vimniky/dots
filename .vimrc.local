@@ -80,6 +80,6 @@ autocmd User Node
 " syntax for javacsript libraries
 " https://github.com/othree/javascript-libraries-syntax.vim
 let g:used_javascript_libs = 'jquery,underscore,react,requirejs'
-
+let g:syntastic_enable_racket_racket_checker = 1
 set rtp+=~/.fzf
 set nospell

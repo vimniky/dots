@@ -2,11 +2,11 @@
 function f() { find . -iname "*$1*" ${@:2} }
 function r() { grep "$1" ${@:2} -R . }
 
-function use-docker-toolbox() {
+function docker-use-vmachine() {
   eval $(docker-machine env default)
 }
 
-function use-docker-for-mac() {
+function docker-use-for-mac() {
   unset DOCKER_TLS_VERIFY
   unset DOCKER_CERT_PATH
   unset DOCKER_MACHINE_NAME
