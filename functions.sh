@@ -2,21 +2,6 @@
 function f() { find . -iname "*$1*" ${@:2} }
 function r() { grep "$1" ${@:2} -R . }
 
-function docker-use-vmachine() {
-  eval $(docker-machine env default)
-}
-
-function docker-use-for-mac() {
-  unset DOCKER_TLS_VERIFY
-  unset DOCKER_CERT_PATH
-  unset DOCKER_MACHINE_NAME
-  unset DOCKER_HOST
-}
-# remove all exited docker containers
-function docker-rm-all-exited-containers() {
-  docker rm -v $(docker ps -aq -f status=exited)
-}
-
 # mkdir and cd 
 function take() { mkdir -p "$@" && cd "$_";}
 

@@ -4,3 +4,4 @@
 . "$HOME/dots/colorman.sh"
 . "$HOME/dots/haskell.sh"
 . "$HOME/dots/auto-exec.sh"
+. "$HOME/dots/docker.sh"
