@@ -64,6 +64,7 @@ plugins=(
     emacs
     tmux
     zsh-completions
+    jsontools
 )
 
 
