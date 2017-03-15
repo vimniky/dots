@@ -72,7 +72,15 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 """""""""""""""""""""""""""""""""""""""
-
+" golang : vim-go setting
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 " vim-node customize
 " https://github.com/moll/vim-node
 "<C-w>f to open the file under the cursor in a new vertical split
