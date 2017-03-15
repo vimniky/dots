@@ -1,16 +1,17 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/vimniky/.oh-my-zsh
 
-# go
-export GOPATH="$HOME/langs/go"
-
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# haskell
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="/Applications/racket/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+# go
+export GOPATH="$HOME/langs/go"
 export PATH="$GOPATH/bin:$PATH"
+
 export USER_NAME="vimniky"
 export editor=vim
 

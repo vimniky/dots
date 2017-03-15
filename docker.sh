@@ -3,11 +3,14 @@ alias vdocker="vim $HOME/dots/docker.sh"
 alias d=docker
 alias dm="docker-machine"
 alias dcom="docker-compose"
+alias docker-volume-find-all-dangling="docker volume ls -f dangling=true"
+alias docker-volume-rm-all-dangling="docker volume rm `docker volume ls -q -f dangling=true`"
 
 # functions
 function docker-use-vmachine() {
   eval $(docker-machine env default)
 }
+
 
 function docker-use-for-mac() {
   unset DOCKER_TLS_VERIFY
