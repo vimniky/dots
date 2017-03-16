@@ -7,3 +7,4 @@
 . "$HOME/dots/docker.sh"
 . "$HOME/dots/rancher.sh"
 . "$HOME/dots/git.sh"
+. "$HOME/dots/tmux.sh"
