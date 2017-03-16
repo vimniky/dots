@@ -6,3 +6,4 @@
 . "$HOME/dots/auto-exec.sh"
 . "$HOME/dots/docker.sh"
 . "$HOME/dots/rancher.sh"
+. "$HOME/dots/git.sh"

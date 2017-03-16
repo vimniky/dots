@@ -11,6 +11,9 @@ function docker-use-vmachine() {
   eval $(docker-machine env default)
 }
 
+function docker-stop-all-containers() {
+  docker stop $(docker ps -q)
+}
 
 function docker-use-for-mac() {
   unset DOCKER_TLS_VERIFY
