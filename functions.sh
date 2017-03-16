@@ -5,6 +5,11 @@ function r() { grep "$1" ${@:2} -R . }
 # mkdir and cd 
 function take() { mkdir -p "$@" && cd "$_";}
 
+
+function pserver() {
+  python -m SimpleHTTPServer $1
+}
+
 # mkalias on the fly
 ############################
 function mkalias() {

@@ -23,3 +23,6 @@ function docker-rm-all-exited-containers() {
   docker rm -v $(docker ps -aq -f status=exited)
 }
 
+function docker-rm-all-created-containers() {
+  docker rm -v $(docker ps -aq -f status=created)
+}

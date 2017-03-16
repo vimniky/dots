@@ -22,7 +22,6 @@ alias runhaskell-sandbox="runhaskell -no-user-package-db -package-db .cabal-sand
 alias gmm='git commit -m'
 alias gmma='git commit --amend'
 alias git-conflict='git diff --name-only --diff-filter=U'
-alias pserver='python -m SimpleHTTPServer'
 #alias for 'brew services'
 alias bs="brew services"
 alias g="git"
