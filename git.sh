@@ -7,6 +7,7 @@ function git-commit-dots() {
   else
     git commit -m "$(date)"
   fi
+  git push
 }
 
 function git-commit-emacsrc() {
@@ -18,5 +19,6 @@ function git-commit-emacsrc() {
   else
     git commit -m "$(date)"
   fi
+  git push
 }
 
