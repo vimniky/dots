@@ -10,6 +10,13 @@ function pserver() {
   python -m SimpleHTTPServer $1
 }
 
+function cdd() {
+  cd "./$(fzf)/.."
+}
+
+function vimf() {
+  vim $(fzf)
+}
 # mkalias on the fly
 ############################
 function mkalias() {

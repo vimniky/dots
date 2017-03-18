@@ -1,6 +1,7 @@
 alias ls="ls -GAp"
 alias o="open"
 alias dirs='dirs -v'
+alias ff="fzf"
 alias sozsh="source ~/.zshrc"
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw &>/dev/null"
 alias vim-install-boundle="vim +BundleInstall! +BundleClean +q"

@@ -5,10 +5,16 @@ alias dm="docker-machine"
 alias dcom="docker-compose"
 alias docker-volume-find-all-dangling="docker volume ls -f dangling=true"
 alias docker-volume-rm-all-dangling="docker volume rm `docker volume ls -q -f dangling=true`"
-
+autoload -U compinit && compinit
 # functions
-function docker-use-vmachine() {
-  eval $(docker-machine env default)
+function dm-use() {
+  if [ -z "$1" ]
+  then 
+    eval $(docker-machine env default)
+  else
+    eval $(docker-machine env "$1")
+  fi
+  env | grep DOCKER
 }
 
 function docker-stop-all-containers() {

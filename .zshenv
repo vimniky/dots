@@ -33,4 +33,5 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 export TERM=xterm-256color
-
+## fzf setting
+export FZF_DEFAULT_OPTS='--reverse'
