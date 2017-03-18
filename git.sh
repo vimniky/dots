@@ -3,9 +3,9 @@ function git-commit-dots() {
   git add .
   if [ -z "$1" ]
   then
-    git commit -m "$1"
-  else
     git commit -m "$(date)"
+  else
+    git commit -m "$1"
   fi
   git push
 }
