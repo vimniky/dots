@@ -1,11 +1,16 @@
 # alias
 alias vdocker="vim $HOME/dots/docker.sh"
 alias d=docker
+alias k=kubectl
 alias dm="docker-machine"
 alias dcom="docker-compose"
 alias docker-volume-find-all-dangling="docker volume ls -f dangling=true"
 alias docker-volume-rm-all-dangling="docker volume rm `docker volume ls -q -f dangling=true`"
 autoload -U compinit && compinit
+
+# kubectl autocompeletion
+
+source <(kubectl completion zsh)
 
 # default listenning on port 9000
 function docker-create-docker-ui() {
@@ -20,8 +25,14 @@ function docker-create-docker-ui() {
 # functions
 function dm-use() {
   if [ -z "$1" ]
-  then 
+  then
     eval $(docker-machine env default)
+  elif [ "$1" == "formac" ]
+  then
+    docker-use-for-mac
+  elif [ "$1" == "minikube" ]
+  then
+    eval $(minikube docker-env)
   else
     eval $(docker-machine env "$1")
   fi
@@ -37,7 +48,11 @@ function docker-use-for-mac() {
   unset DOCKER_CERT_PATH
   unset DOCKER_MACHINE_NAME
   unset DOCKER_HOST
+  unset DOCKER_API_VERSION
 }
+# backup volume
+# sudo docker run --rm --volumes-from volume_container -v $(pwd):/backup ubuntu tar cvf /backup/data.tar /data
+
 # remove all exited docker containers
 function docker-rm-all-exited-containers() {
   docker rm -v $(docker ps -aq -f status=exited)
@@ -62,3 +77,7 @@ function docker-rm-all-created-containers() {
   docker rm -v $(docker ps -aq -f status=created)
 }
 
+# list available users in an image
+function docker-list-users() {
+  docker run --rm "$1" awk -F: '$0=$1' /etc/passwd
+}
