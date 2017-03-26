@@ -8,3 +8,4 @@
 . "$HOME/dots/rancher.sh"
 . "$HOME/dots/git.sh"
 . "$HOME/dots/tmux.sh"
+. "$HOME/dots/go.sh"

@@ -1,3 +1,6 @@
+# docker version manager
+[ -f /usr/local/opt/dvm/dvm.sh ] && . /usr/local/opt/dvm/dvm.sh
+
 # alias
 alias vdocker="vim $HOME/dots/docker.sh"
 alias d=docker
