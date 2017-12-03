@@ -58,13 +58,14 @@ plugins=(
     git
     z
     docker
-    docker-compose
+    # docker-compose
     zsh-autosuggestions
     alias-tips
     emacs
     tmux
     zsh-completions
     jsontools
+    # kubectl
 )
 
 
@@ -100,5 +101,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-. ~/dots/source.sh
+. ~/dots/source-files
 

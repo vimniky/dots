@@ -2,6 +2,9 @@
 function f() { find . -iname "*$1*" ${@:2} }
 function r() { grep "$1" ${@:2} -R . }
 
+function port-ls() {
+  lsof -i ":$1"
+}
 # mkdir and cd 
 function take() { mkdir -p "$@" && cd "$_";}
 
@@ -200,4 +203,43 @@ function codepoint() {
 # small enough for one screen.
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}
+
+
+function port-kill() {
+  port=$1
+
+  if [[ ${#port} == 0 ]]; then
+   echo "Kills a service running on the specified port."
+   echo "usage: killport PORT"
+   exit;
+  fi
+
+  # Get everything running on this port
+  lsofcmd="lsof -i :$port"
+
+  # echo the command, and then iterate through each line of the output
+  counter=0
+  $(echo $lsofcmd) | while read -r line; do
+    counter=$((counter+1)) # We want to skip the first line, as the first line is the column headers, from lsof
+
+    if [[ $counter > 1 ]]; then
+      procname=$(echo $line | awk '{print $1}')
+      pid=$(echo $line | awk '{print $2}')
+
+      echo "Killing $procname with PID: $pid"
+      kill $pid;
+    fi
+  done
+}
+
+function psgrep() {
+  ps aux | grep "$1" | grep -v 'grep'
+}
+
+
+function pskill () {
+  [ ${#} -eq 0 ] && echo "usage: $FUNCNAME STRING" && return 0 local pid
+  pid=$(ps ax | grep "$1" | grep -v grep | awk ‘{ print $1 }’) echo -e "terminating ‘$1’ / process(es):\n$pid"
+  kill -SIGTERM $pid
 }

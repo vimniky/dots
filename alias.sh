@@ -2,6 +2,7 @@ alias ls="ls -GAp"
 alias o="open"
 alias dirs='dirs -v'
 alias ff="fzf"
+alias t="tig"
 alias sozsh="source ~/.zshrc"
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw &>/dev/null"
 alias vim-install-boundle="vim +BundleInstall! +BundleClean +q"
@@ -21,7 +22,7 @@ alias ghci-sandbox="ghci -no-user-package-db -package-db .cabal-sandbox/*-packag
 alias runhaskell-sandbox="runhaskell -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
 # git alias
 alias gmm='git commit -m'
-alias gmma='git commit --amend'
+alias gma='git commit --amend'
 alias git-conflict='git diff --name-only --diff-filter=U'
 #alias for 'brew services'
 alias bs="brew services"

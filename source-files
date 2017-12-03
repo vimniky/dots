@@ -1,11 +1,14 @@
 # source in other custom setting files
+. "$HOME/dots/.zshrc.local"
 . "$HOME/dots/alias.sh"
 . "$HOME/dots/functions.sh"
 . "$HOME/dots/colorman.sh"
-. "$HOME/dots/haskell.sh"
-. "$HOME/dots/auto-exec.sh"
+#. "$HOME/dots/haskell.sh"
 . "$HOME/dots/docker.sh"
-. "$HOME/dots/rancher.sh"
 . "$HOME/dots/git.sh"
-. "$HOME/dots/tmux.sh"
+. "$HOME/dots/tmux.autostart.sh"
+. "$HOME/dots/k8s.sh"
 . "$HOME/dots/go.sh"
+. "$HOME/dots/.exports"
+. "$HOME/dots/time-consuming-cmds"
+

@@ -1,6 +1,3 @@
-# docker version manager
-[ -f /usr/local/opt/dvm/dvm.sh ] && . /usr/local/opt/dvm/dvm.sh
-
 # alias
 alias vdocker="vim $HOME/dots/docker.sh"
 alias d=docker
@@ -9,10 +6,8 @@ alias dm="docker-machine"
 alias dcom="docker-compose"
 alias docker-volume-find-all-dangling="docker volume ls -f dangling=true"
 alias docker-volume-rm-all-dangling="docker volume rm `docker volume ls -q -f dangling=true`"
-autoload -U compinit && compinit
 
 # kubectl autocompeletion
-
 source <(kubectl completion zsh)
 
 # default listenning on port 9000
@@ -84,3 +79,6 @@ function docker-rm-all-created-containers() {
 function docker-list-users() {
   docker run --rm "$1" awk -F: '$0=$1' /etc/passwd
 }
+
+alias docker-rm-dangling-volume="docker volume rm $(docker volume ls -f dangling=true -q)"
+alias docker-rm-all-untagged-images="docker rmi -f $(docker images | grep "^<none>" | awk "{print $3}")"

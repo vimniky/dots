@@ -28,3 +28,13 @@ export LESS_TERMCAP_md="${yellow}";
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
+
+# cheat
+export CHEATCOLORS=true
+
+export CDPATH=~/Desktop:~/projects:~/dev
+# ingnore cotinues duplicated commands
+# export HISTCONTROL=ignoredups
+# squish duplicated history commands
+export HISTCONTROL=erasedups
+export HISTIGNORE="pwd:ls:ls –ltr:ls -a:ll:vim:cd:z:history:echo:cat"
