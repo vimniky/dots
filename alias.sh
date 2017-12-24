@@ -14,6 +14,7 @@ alias desk="cd ~/Desktop"
 alias valias="vim ~/dots/alias.sh"
 alias untar="tar xzf"
 alias rrm="rm -rf"
+alias cl="clear"
 alias cpp="cp -Rp"
 alias treep="tree --noreport -fp"
 alias treepa="tree --noreport -fpa"
@@ -35,6 +36,7 @@ alias subdir="~/Library/Application\ Support/Sublime\ Text\ 3"
 alias find-files="mdfind -onlyin"
 #log
 alias openssl-gen="openssl req -x509 -days 365 -newkey rsa:1024 -out my.cert -keyout my.key"
+alias lsof-ports="lsof -iTCP -sTCP:LISTEN -n -P"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
