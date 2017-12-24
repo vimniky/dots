@@ -113,6 +113,7 @@ set hlsearch
 set exrc
 set signcolumn=yes
 set incsearch
+set clipboard=unnamed
 
 " Omnifunc
 " Disable for pluralsight
@@ -222,10 +223,10 @@ set foldlevel=1
 set mouse=nicr
 
 " Splits (https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally)
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
 
 set splitbelow
 set splitright
@@ -271,6 +272,11 @@ au BufRead,BufNewFile *.cson set filetype=coffee
 au BufRead,BufNewFile *.pml call SetPmlOptions()
 au BufRead,BufNewFile *.adoc call SetAdocOptions()
 au BufRead,BufNewFile,BufWritePost *Spec.js set filetype=jasmine.javascript.jsx
+
+" remember cursor position
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
 
 " Helper functions
 function! StrTrim(txt)
@@ -401,7 +407,8 @@ let g:splitjoin_trailing_comma = 1
 " Toggle nerdtree
 map <C-n> :NERDTreeToggle<CR>
 nnoremap ; :
-inoremap  jk <esc>
+nnoremap Q :q!<CR>
+inoremap jk <esc>
 " Find current file in nerdtree
 nmap ,n :NERDTreeFind<CR>
 
