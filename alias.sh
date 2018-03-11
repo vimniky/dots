@@ -1,14 +1,12 @@
 alias ls="ls -GAp"
 alias o="open"
 alias dirs='dirs -v'
-alias ff="fzf"
 alias t="tig"
 alias sozsh="source ~/.zshrc"
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw &>/dev/null"
 alias vim-install-boundle="vim +BundleInstall! +BundleClean +q"
 alias vbundles="vim ~/.vimrc.bundles.local"
-alias vimrc="vim ~/.vimrc.local"
-alias g-ammend="git ammend -m"
+alias git-diff-file-history="git log --follow -p"
 alias vi="vim"
 alias desk="cd ~/Desktop"
 alias valias="vim ~/dots/alias.sh"
@@ -26,14 +24,13 @@ alias gmm='git commit -m'
 alias gma='git commit --amend'
 alias git-conflict='git diff --name-only --diff-filter=U'
 #alias for 'brew services'
-alias bs="brew services"
 alias g="git"
-alias sb="/Applications/lambda.app/Contents/SharedSupport/bin/subl"
 alias oaf="open -a Finder"
-alias gg="open -a Google\ Chrome"
+alias chrome="open -a Google\ Chrome"
+alias safari="open -a Safari"
 alias if0="ifconfig en0"
-alias subdir="~/Library/Application\ Support/Sublime\ Text\ 3"
 alias find-files="mdfind -onlyin"
+alias git-confict-files="git diff  --diff-filter=U"
 #log
 alias openssl-gen="openssl req -x509 -days 365 -newkey rsa:1024 -out my.cert -keyout my.key"
 alias lsof-ports="lsof -iTCP -sTCP:LISTEN -n -P"

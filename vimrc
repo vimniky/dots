@@ -114,6 +114,7 @@ set exrc
 set signcolumn=yes
 set incsearch
 set clipboard=unnamed
+set belloff=all
 
 " Omnifunc
 " Disable for pluralsight
@@ -405,8 +406,10 @@ let g:splitjoin_trailing_comma = 1
 " ========
 
 " Toggle nerdtree
-map <C-n> :NERDTreeToggle<CR>
+map <C-e> :NERDTreeToggle<CR>
 nnoremap ; :
+nnoremap j gj
+nnoremap k gk
 nnoremap Q :q!<CR>
 inoremap jk <esc>
 " Find current file in nerdtree
@@ -435,6 +438,10 @@ nmap <leader>r :redraw!<CR>
 
 " AG search word under cursor
 nmap <silent> <leader>ag :Ag <c-r><c-w><cr>
+
+" Switch buffer
+nnoremap ]b :bn<CR>
+nnoremap [b :bp<CR>
 
 " Colors
 " ======

@@ -3,7 +3,7 @@
 . "$HOME/dots/alias.sh"
 . "$HOME/dots/functions.sh"
 . "$HOME/dots/colorman.sh"
-#. "$HOME/dots/haskell.sh"
+. "$HOME/dots/haskell.sh"
 . "$HOME/dots/docker.sh"
 . "$HOME/dots/git.sh"
 . "$HOME/dots/tmux.autostart.sh"
