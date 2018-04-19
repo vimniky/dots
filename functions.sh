@@ -19,6 +19,12 @@ function take() { mkdir -p "$@" && cd "$_";}
 
 
 function pserver() {
+  if [ -z "$1" ]; then
+    port=8000
+  else
+    port=$1
+  fi
+  echo "Serving HTTP on: http://localhost:$port"
   python -m SimpleHTTPServer $1
 }
 
