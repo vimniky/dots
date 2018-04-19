@@ -443,6 +443,9 @@ nmap <silent> <leader>ag :Ag <c-r><c-w><cr>
 nnoremap ]b :bn<CR>
 nnoremap [b :bp<CR>
 
+" Maintain undo history between sessions
+set undofile
+
 " Colors
 " ======
 
