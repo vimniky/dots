@@ -65,6 +65,7 @@ plugins=(
     tmux
     zsh-completions
     jsontools
+    nvm
     # kubectl
 )
 
