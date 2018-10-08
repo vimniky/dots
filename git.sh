@@ -1,3 +1,11 @@
+# alias
+alias g="git"
+alias gmm='git commit -m'
+alias gma='git commit --amend'
+alias git-confict-files="git diff  --diff-filter=U"
+alias git-conflict='git diff --name-only --diff-filter=U'
+alias git-diff-file-history="git log --follow -p"
+
 function git-commit-dots() {
   cd ~/dots
   git add .

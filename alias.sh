@@ -1,18 +1,15 @@
 alias ls="ls -GAp"
-alias o="open"
 alias dirs='dirs -v'
 alias t="tig"
 alias sozsh="source ~/.zshrc"
 # alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw &>/dev/null"
 alias vim-install-boundle="vim +BundleInstall! +BundleClean +q"
 alias vbundles="vim ~/.vimrc.bundles.local"
-alias git-diff-file-history="git log --follow -p"
 alias vi="vim"
 alias desk="cd ~/Desktop"
 alias valias="vim ~/dots/alias.sh"
 alias untar="tar xzf"
 alias rrm="rm -rf"
-alias cl="clear"
 alias cpp="cp -Rp"
 alias treep="tree --noreport -fp"
 alias treepa="tree --noreport -fpa"
@@ -22,18 +19,12 @@ alias runhaskell-sandbox="runhaskell -no-user-package-db -package-db .cabal-sand
 alias yd="youtube-dl"
 alias py2=python
 alias py=python3
-# git alias
-alias gmm='git commit -m'
-alias gma='git commit --amend'
-alias git-conflict='git diff --name-only --diff-filter=U'
 #alias for 'brew services'
-alias g="git"
 alias oaf="open -a Finder"
 alias chrome="open -a Google\ Chrome"
 alias safari="open -a Safari"
 alias if0="ifconfig en0"
 alias find-files="mdfind -onlyin"
-alias git-confict-files="git diff  --diff-filter=U"
 #log
 alias openssl-gen="openssl req -x509 -days 365 -newkey rsa:1024 -out my.cert -keyout my.key"
 alias lsof-ports="lsof -iTCP -sTCP:LISTEN -n -P"
