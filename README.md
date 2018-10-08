@@ -1,5 +1,12 @@
 # My MacOS Setup
 
+## [brew](https://brew.sh/)
+
+### Installation:
+```sh
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
 ## [Git & Github](https://git-scm.com/)
 
 1. Install git If git is not installed on your system.
@@ -59,13 +66,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 		plugins=(zsh-autosuggestions)
 		```
 
-## [brew](https://brew.sh/)
-
-### Installation:
-```sh
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
 ### Utilities
 
 - [fzf](https://github.com/junegunn/fzf)
@@ -124,3 +124,38 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 A free, open source, and cross-platform media player.
 
 ## [vscode](https://code.visualstudio.com/)
+
+### User Configration
+```sh
+$HOME/Library/Application\ Support/Code
+```
+
+### Install `code` command in path
+
+command+shift+p & type: shell Command
+
+## Links
+
+```sh
+# .zshrc & .zshenv
+ln -s $HOME/dots/{.zshrc,.zshenv} $HOME/
+
+# .inputrc
+ln -s $HOME/dots/.inputrc $HOME
+
+# vim
+ln -s $HOME/dots/{.vimrc,.vimrc.local,.vimrc.bundles.local} $HOME/
+# open vim & run :PlugInstall
+
+# vscode
+ln -s $HOME/dots/vscode $HOME/Library/Application\ Support/Code/User
+
+# oh-my-zsh theme
+ln -s $HOME/dots/vimniky.zsh-theme $HOME/.oh-my-zsh/themes/
+
+# .gitconfig & .gitignore
+ln -s $HOME/dots/{.gitconfig,.gitignore} $HOME/
+
+# link all
+ln -s $HOME/dots/{.zshrc,.zshenv,.inputrc,.vim,.vimrc,.vimrc.local,.vimrc.bundles.local,vimniky.zsh-theme,s.gitconfig,.gitignore} $HOME/
+```
