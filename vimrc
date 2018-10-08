@@ -96,7 +96,7 @@ Plug 'trevordmiller/nova-vim'
 call plug#end()
 
 " Pathogen
-execute pathogen#infect()
+" execute pathogen#infect()
 
 " General Config
 syntax on
