@@ -55,3 +55,6 @@ export CDPATH=~/Desktop:~/projects:~/dev
 # squish duplicated history commands
 export HISTCONTROL=erasedups
 export HISTIGNORE="pwd:ls:ls –ltr:ls -a:ll:vim:cd:z:history:echo:cat"
+
+# added by Anaconda3 5.2.0 installer
+export PATH="/anaconda3/bin:$PATH"

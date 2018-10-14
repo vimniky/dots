@@ -1,7 +1,6 @@
 . "$HOME/dots/alias.sh"
 . "$HOME/dots/git.sh"
 . "$HOME/dots/functions.sh"
-. "$HOME/dots/.exports"
 # . "$HOME/dots/colorman.sh"
 # . "$HOME/dots/haskell.sh"
 # . "$HOME/dots/docker.sh"
