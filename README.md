@@ -45,6 +45,8 @@
 	```
 - [Sourcetree](https://www.sourcetreeapp.com/)
 
+- Color picker: [colorPicker](http://www.northernspysoftware.com/software/colorpicker) + [Skala Color](https://bjango.com/mac/skalacolor/)
+
 ## Shell
 ### [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 

@@ -61,7 +61,7 @@ plugins=(
     # docker-compose
     zsh-autosuggestions
     alias-tips
-    emacs
+    # emacs
     tmux
     zsh-completions
     jsontools
