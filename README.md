@@ -73,8 +73,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 - [fzf](https://github.com/junegunn/fzf)
 - tree
 
-## [MacDown](https://macdown.uranusjr.com/)
-
 ### Configuration:
 
 - Preferences -> Rendering: 

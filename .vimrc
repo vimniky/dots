@@ -5,8 +5,6 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 
 function! BuildYCM(info)
@@ -385,7 +383,7 @@ let g:rooter_silent_chdir = 1
 " cnoreabbrev ag Ack
 " cnoreabbrev aG Ack
 " cnoreabbrev Ag Ack
-" cnoreabbrev AG Ack  
+" cnoreabbrev AG Ack
 
 " FZF
 " ===

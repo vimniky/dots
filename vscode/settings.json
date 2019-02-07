@@ -6,7 +6,7 @@
     // #-------- editor
     // "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
     "editor.renderLineHighlight": "none",
     "editor.renderIndentGuides": false,
     // number | "hide"
@@ -35,7 +35,6 @@
     "workbench.statusBar.visible": true,
     // #--------- workbench
     "workbench.iconTheme": null,
-    "workbench.colorTheme": "Default High Contrast",
     "workbench.editor.showTabs": true,
     // hide the siderbar
     "workbench.activityBar.visible": false,
@@ -49,9 +48,9 @@
         "editor.inactiveSelectionBackground": "#303030",
         "editorCursor.background": "#cdcdcd",
         "editorCursor.foreground": "#cdcdcd",
-        "statusBar.background": "#005f5f",
         "titleBar.activeBackground": "#ccc",
         "titleBar.border": "#fff",
+        "statusBar.background": "#005f5f",
         "statusBar.noFolderBackground": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f"
     },
@@ -222,4 +221,8 @@
     "sync.lastUpload": "2018-07-13T07:28:19.475Z",
     "sync.lastDownload": "",
     "sync.forceDownload": false,
+    "window.zoomLevel": 1,
+    "breadcrumbs.enabled": false,
+    "editor.renderWhitespace": "none",
+    "workbench.colorTheme": "Quiet Light",
 }

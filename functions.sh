@@ -2,21 +2,21 @@
 function f() { find . -iname "*$1*" ${@:2} }
 function r() { grep "$1" ${@:2} -R . }
 
-function gog() {
+function google() {
   open /Applications/Google\ Chrome.app/ "http://www.google.com/search?q=$*";
 }
 function github() {
   open /Applications/Google\ Chrome.app/ "https://github.com/$*";
 }
-function tube() {
+function youtube() {
   open /Applications/Google\ Chrome.app/ "https://www.youtube.com/results?search_query=$*";
 }
 function port-ls() {
   lsof -i ":$1"
 }
+
 # mkdir and cd 
 function take() { mkdir -p "$@" && cd "$_";}
-
 
 function pserver() {
   if [ -z "$1" ]; then

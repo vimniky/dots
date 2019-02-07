@@ -58,3 +58,6 @@ export HISTIGNORE="pwd:ls:ls –ltr:ls -a:ll:vim:cd:z:history:echo:cat"
 
 # added by Anaconda3 5.2.0 installer
 export PATH="/anaconda3/bin:$PATH"
+
+# flutter
+export PATH="$PATH:$HOME/flutter-dev/flutter/bin"

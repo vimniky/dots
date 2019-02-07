@@ -1,16 +1,19 @@
 [user]
 	phone = 13660072677
-	name = vimniky
-	emial = vimniky@gmail.com
-	email = vimniky@gmail.com
+	name = vikYpie
+	emial = vimniky@icloud.com
+	email = vimniky@icloud.com
 [core]
 	editor = vim
 	autocrlf = input
-	excludesfile = /Users/vimniky/.gitignore_global
+	excludesfile = /Users/viky/.gitignore
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
+# setup multiply github accounts:https://gist.github.com/jexchan/2351996
+# [remote "origin"]
+#   url = git@github.com-vikYpie:vikYpie/gfs.git
 [alias]
 	aa = add all
 	co = checkout
@@ -204,3 +207,8 @@
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
