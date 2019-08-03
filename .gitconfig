@@ -1,8 +1,7 @@
 [user]
 	phone = 13660072677
-	name = vikYpie
-	emial = vimniky@icloud.com
-	email = vimniky@icloud.com
+	name = vimniky
+	email = vimniky@gmail.com
 [core]
 	editor = vim
 	autocrlf = input

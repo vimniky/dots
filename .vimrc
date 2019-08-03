@@ -13,7 +13,6 @@ function! BuildYCM(info)
   endif
 endfunction
 " Disable for pluralsight
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
 function! BuildTern(info)
   if a:info.status == 'installed' || a:info.force
