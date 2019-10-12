@@ -60,10 +60,8 @@ plugins=(
     docker
     # docker-compose
     zsh-autosuggestions
-    alias-tips
     # emacs
     tmux
-    zsh-completions
     jsontools
     nvm
     # kubectl

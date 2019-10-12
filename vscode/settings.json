@@ -34,7 +34,7 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.visible": true,
     // #--------- workbench
-    "workbench.iconTheme": null,
+    "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.showTabs": true,
     // hide the siderbar
     "workbench.activityBar.visible": false,
@@ -224,5 +224,9 @@
     "window.zoomLevel": 1,
     "breadcrumbs.enabled": false,
     "editor.renderWhitespace": "none",
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.cursorBlinking": "solid",
+    "editor.fontWeight": "bold",
 }

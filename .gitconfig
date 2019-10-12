@@ -26,6 +26,8 @@
 	iged = !git ls-files -v | grep "^[[:lower:]]"
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+  # clone only the master branch
+  cmb = clone --single-branch -b master
 
 	# View the current working tree status using the short format
 	s = status -s
