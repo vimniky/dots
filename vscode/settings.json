@@ -16,12 +16,10 @@
     // disable highlight words that is the same as
     // the selection
     "editor.selectionHighlight": false,
-    "editor.fontSize": 13,
-    "editor.cursorStyle": "block",
     "editor.lineNumbers": "on",
     "editor.wordWrap": "on",
     "editor.wordWrapColumn": 80,
-    "editor.fontFamily": "monospace",
+    "editor.fontFamily": "source code pro",
     "editor.scrollBeyondLastLine": false,
     // don't enable smoothScrolling which would break C-d and C-u
     "editor.smoothScrolling": false,
@@ -103,10 +101,11 @@
     "vim.mouseSelectionGoesIntoVisualMode": false,
     "vim.easymotionMarkerBackgroundColor": "#f00",
     "vim.insertModeKeyBindings": [
-        {
-            "before": ["j", "k"],
-            "after": ["<Esc>"],
-        },
+      {
+        "before": ["j", "k"],
+        // "l" for move one position right
+        "after": ["<Esc>", "l"]
+      }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
@@ -223,12 +222,16 @@
     "sync.forceDownload": false,
     "window.zoomLevel": 1,
     "editor.renderWhitespace": "none",
-    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorTheme": "Monokai",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "editor.cursorBlinking": "solid",
-    "editor.fontWeight": "bold",
+    "editor.fontWeight": "400",
     "breadcrumbs.enabled": false,
     "vim.cursorStylePerMode.insert": "line-thin",
     "dart.checkForSdkUpdates": false,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.fontFamily": "source code pro",
+    "editor.fontLigatures": null,
+    "editor.formatOnType": true,
 }
