@@ -108,18 +108,22 @@ export NVM_DIR="$HOME/.nvm"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
-# >>> conda initialize >>>
+# added by Anaconda3 2019.10 installer
+# >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/viky/opt/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+    \eval "$__conda_setup"
 else
-    if [ -f "/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/viky/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/viky/opt/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
     else
-        export PATH="/anaconda3/bin:$PATH"
+        \export PATH="/Users/viky/opt/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
+# <<< conda init <<<
 
+# added by travis gem
+[ -f /Users/viky/.travis/travis.sh ] && source /Users/viky/.travis/travis.sh

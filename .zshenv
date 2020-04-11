@@ -59,5 +59,11 @@ export HISTIGNORE="pwd:ls:ls –ltr:ls -a:ll:vim:cd:z:history:echo:cat"
 # added by Anaconda3 5.2.0 installer
 export PATH="/anaconda3/bin:$PATH"
 
-# flutter
+########## flutter
 export PATH="$PATH:$HOME/flutter-dev/flutter/bin"
+# Flutter Registry
+# [镜像地址](https://flutter.cn/community/china)
+# 社区主镜像，采用多种方式同步 Flutter 开发者资源（推荐）。
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
