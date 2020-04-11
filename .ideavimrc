@@ -1,5 +1,13 @@
-inoremap jk <esc>
-"noremap <C-g> <esc>
+" https://github.com/JetBrains/ideavim
+" Emulated Vim Plugins
+set easymotion
+set surround
+set multiple-cursors
+set commentary
+
+""""""""""""Custom Key Map
+inoremap jk <esc>l
+noremap <C-g> <esc>
 "cnoremap <C-g> <esc>
 "xnoremap <C-g> <esc>
 "onoremap <C-g> <esc>
