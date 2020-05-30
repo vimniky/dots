@@ -17,6 +17,14 @@
     //     "command": "workbench.action.navigateDown",
     // },
     {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenPreviousEditor"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
         "key": "ctrl+g",
         "command": "-workbench.action.gotoLine"
     },
