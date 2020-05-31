@@ -81,8 +81,10 @@
     // "vim.visualModeKeyBindings"
     // https://marketplace.visualstudio.com/items?itemName=vscodevim.vim
     "vim.disableExtension": false,
-    "vim.statusBarColorControl": true,
-    "vim.easymotion": true,
+    // disable vim.statusBarColorControl to make vim plugin faster
+    "vim.experimentalOptimizations": true,
+    "vim.statusBarColorControl": false,
+    "vim.easymotion": false,
     "vim.useSystemClipboard": true,
     "vim.leader": "<space>",
     "vim.showmodename": true,
@@ -226,18 +228,6 @@
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
-    "sync.gist": "7d7178a8d7fec9ee8ab6f713f92d53e9",
-    "sync.host": "",
-    "sync.pathPrefix": "",
-    "sync.quietSync": false,
-    "sync.askGistName": false,
-    "sync.removeExtensions": true,
-    "sync.syncExtensions": true,
-    "sync.autoDownload": false,
-    "sync.autoUpload": false,
-    "sync.lastUpload": "2018-07-13T07:28:19.475Z",
-    "sync.lastDownload": "",
-    "sync.forceDownload": false,
     "window.zoomLevel": 1,
     "editor.renderWhitespace": "none",
     "workbench.colorTheme": "Monokai",
@@ -259,4 +249,8 @@
     "typescript.format.semicolons": "insert",
     "editor.tabSize": 2,
     "workbench.tree.indent": 16,
+    "todo-tree.tree.showScanModeButton": false,
+    "editor.formatOnSave": true,
+    "explorer.confirmDelete": false,
+    "vim.autoindent": false
 }
