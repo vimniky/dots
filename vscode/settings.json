@@ -25,8 +25,6 @@
     "editor.find.globalFindClipboard": true,
     // #-------- git
     "git.decorations.enabled": true,
-    // welcomePage | newUntitledFile
-    "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.visible": true,
     // #--------- workbench
     "workbench.iconTheme": "material-icon-theme",
@@ -252,5 +250,13 @@
     "todo-tree.tree.showScanModeButton": false,
     "editor.formatOnSave": true,
     "explorer.confirmDelete": false,
-    "vim.autoindent": false
+    "vim.autoindent": false,
+    "sync.gist": "750f0f480651a535eb52460ae44031d8",
+    "sync.autoUpload": true,
+    "sync.autoDownload": true,
+    "cSpell.userWords": [
+        "alife",
+        "antd"
+    ],
+    "sync.forceUpload": true
 }
