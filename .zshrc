@@ -61,7 +61,6 @@ plugins=(
     # docker-compose
     zsh-autosuggestions
     # emacs
-    tmux
     jsontools
     nvm
     # kubectl
