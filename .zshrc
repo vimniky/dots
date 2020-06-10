@@ -67,8 +67,6 @@ plugins=(
 
 
 # User configuration
-
-
 # export MANPATH="/usr/local/man:$MANPATH"
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -100,7 +98,9 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 . ~/dots/source-files
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+# n: node package manager
+export N_PREFIX="$HOME/n"
+export PATH="$N_PREFIX/bin:$PATH" 
 
 # added by Anaconda3 2019.10 installer
 # >>> conda init >>>
@@ -121,3 +121,6 @@ unset __conda_setup
 
 # added by travis gem
 [ -f /Users/viky/.travis/travis.sh ] && source /Users/viky/.travis/travis.sh
+
+# just env path
+export PATH=/Users/luoxiao/.just-installs/bin:$PATH
