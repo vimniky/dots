@@ -1,6 +1,7 @@
 alias ls="ls -GAp"
 alias dirs='dirs -v'
-alias t="tig"
+alias t="tmux"
+alias tx="tmuxinator"
 alias sozsh="source ~/.zshrc"
 alias vim-install-boundle="vim +BundleInstall! +BundleClean +q"
 alias vbundles="vim ~/.vimrc.bundles.local"

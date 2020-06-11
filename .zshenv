@@ -1,11 +1,12 @@
 # Path to your oh-my-zsh installation.
 export USER_NAME="vimniky"
 export ZSH=/Users/vimniky/.oh-my-zsh
-PATH="$PATH:/Applications/racket/bin:$HOME/bin:."
-PATH="$PATH:$HOME/Library/Haskell/bin"
-export PATH
+export PATH="$PATH:/Applications/racket/bin:$HOME/bin:."
+export PATH="$PATH:$HOME/Library/Haskell/bin"
+export PATH="/usr/local/sbin:$PATH"
+
 # Make vim the default editor.
-export EDITOR='vim';
+export EDITOR='vim'
 export editor=vim
 
 # just
@@ -14,6 +15,11 @@ export PATH=$HOME/.just-installs/bin:$PATH
 # Change defalult Homebrew Bottles sources
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
+# Homebrew
+# Change defalult Homebrew Bottles sources
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+
+# yarn
 export PATH="$PATH:$HOME/.yarn/bin"
 
 # If you installed the SDK via Homebrew, otherwise ~/Library/Android/sdk
