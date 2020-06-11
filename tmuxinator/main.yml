@@ -1,0 +1,27 @@
+# https://github.com/tmuxinator/tmuxinator
+name: Main
+root: ~/
+startup_window: Main
+
+windows:
+  - Main:
+      layout: main-vertical
+      panes:
+        - # Pane 1
+        - # Pane 2
+        - # Pane 3
+  - V2:
+      layout: even-horizontal
+      panes:
+        - # Pane 1
+        - # Pane 2
+  - Tasks:
+      layout: tiled
+      panes: 
+        - # Pane 1
+        - # Pane 2
+        - # Pane 3
+        - # Pane 4
+  - Random: 
+      panes:
+        - # Pane 1
