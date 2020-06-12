@@ -2,7 +2,7 @@ alias ls="ls -GAp"
 alias dirs='dirs -v'
 alias t="tmux"
 alias tx="tmuxinator"
-alias sozsh="source ~/.zshrc"
+alias sozsh="source ~/.zshrc;source ~/.zshenv"
 alias vim-install-boundle="vim +BundleInstall! +BundleClean +q"
 alias vbundles="vim ~/.vimrc.bundles.local"
 alias vi="vim"
@@ -77,3 +77,20 @@ alias sudo='sudo '
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+# git
+alias gmm='git commit -m'
+alias gma='git commit --amend'
+alias git-confict-files="git diff  --diff-filter=U"
+alias git-conflict='git diff --name-only --diff-filter=U'
+alias git-diff-file-history="git log --follow -p"
+
+# fzf
+alias fzopen='open $(fzf)'
+alias fzvim='vim $(fzf)'
+alias fzcode='code $(fzf)'
+function fzgss() {
+ git status -s \
+ | fzf --no-sort --reverse \
+ --preview 'git diff --color=always {+2}'
+}

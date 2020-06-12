@@ -121,6 +121,3 @@ unset __conda_setup
 
 # added by travis gem
 [ -f /Users/viky/.travis/travis.sh ] && source /Users/viky/.travis/travis.sh
-
-# just env path
-export PATH=/Users/luoxiao/.just-installs/bin:$PATH

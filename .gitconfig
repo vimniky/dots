@@ -1,5 +1,4 @@
 [user]
-	phone = 13660072677
 	name = vimniky
 	email = vimniky@gmail.com
 [core]
@@ -207,7 +206,7 @@
 	trustExitCode = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f

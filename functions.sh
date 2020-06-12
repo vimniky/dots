@@ -1,8 +1,4 @@
-# File search
-function f() { find . -iname "*$1*" ${@:2} }
-function r() { grep "$1" ${@:2} -R . }
-
-function google() {
+function gg() {
   open /Applications/Google\ Chrome.app/ "http://www.google.com/search?q=$*";
 }
 function github() {
@@ -15,18 +11,8 @@ function port-ls() {
   lsof -i ":$1"
 }
 
-# mkdir and cd 
+# mkdir and cd
 function take() { mkdir -p "$@" && cd "$_";}
-
-function pserver() {
-  if [ -z "$1" ]; then
-    port=8000
-  else
-    port=$1
-  fi
-  echo "Serving HTTP on: http://localhost:$port"
-  python -m SimpleHTTPServer $1
-}
 
 function cdd() {
   cd "./$(fzf)/.."
@@ -35,18 +21,8 @@ function cdd() {
 function vimf() {
   vim $(fzf)
 }
-# mkalias on the fly
-############################
-function mkalias() {
-    if [ $3 ] ;then 
-        echo  "#$3" >> "~/dots/autoalias.sh";
-    fi
-    echo  "alias $1=\"$2\"" >> "~/dots/autoalias.sh";
 
-    source ~/.zshrc
-}
-
-# tree 
+# tree
 ############################
 # useage treel 2 ~/someDir
 function treel() {
@@ -66,18 +42,6 @@ function cdf {
     fi
 }
 
-# Case sensitive grep
-function search {
-    egrep --color --mmap --exclude=tags --exclude=Session.vim --exclude=*.{png,jpg,gif} \
-        --exclude-dir=backup --exclude-dir=.{git,svn,hg} --exclude-dir=*.xcodeproj -HIrn $1 .
-}
-
-# Case insensitive grep
-function isearch {
-    egrep --color --mmap --exclude=tags --exclude=Session.vim --exclude=*.{png,jpg,gif} \
-        --exclude-dir=backup --exclude-dir=.{git,svn,hg} --exclude-dir=*.xcodeproj -HIrin $1 .
-}
-
 # Full screen Vim help page.
 function :h () {
     vim +"h $1" +only;
@@ -86,21 +50,6 @@ function :h () {
 # Copy current git commit sha1 to the clipboard.
 function gcopy() {
     git rev-parse --short @ | tr -d '\n' | pbcopy && echo "Copied `pbpaste`"
-}
-
-# git commit browser. needs fzf
-log() {
-  git log --graph --color=always \
-      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-  fzf --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \
-      --bind "ctrl-m:execute:
-                echo '{}' | grep -o '[a-f0-9]\{7\}' | head -1 |
-                xargs -I % sh -c 'git show --color=always % | less -R'"
-}
-
-# Copy w/ progress
-cp_p () {
-  rsync -WavP --human-readable --progress $1 $2
 }
 
 # whois a domain or a URL
@@ -154,22 +103,6 @@ function extract() {
 	fi
 }
 
-# animated gifs from any video
-# from alex sexton   gist.github.com/SlexAxton/4989674
-gifify() {
-  if [[ -n "$1" ]]; then
-	if [[ $2 == '--good' ]]; then
-	  ffmpeg -i "$1" -r 10 -vcodec png out-static-%05d.png
-	  time convert -verbose +dither -layers Optimize -resize 900x900\> out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - > "$1.gif"
-	  rm out-static*.png
-	else
-	  ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > "$1.gif"
-	fi
-  else
-	echo "proper usage: gifify <input_movie.mov>. You DO need to include extension."
-  fi
-}
-
 # Use Git’s colored diff when available
 hash git &>/dev/null;
 if [ $? -eq 0 ]; then
@@ -179,13 +112,23 @@ if [ $? -eq 0 ]; then
 fi;
 
 # Start an HTTP server from a directory, optionally specifying the port
-function server() {
+function pserver() {
 	local port="${1:-8000}";
 	sleep 1 && open "http://localhost:${port}/" &
 	# Set the default Content-Type to `text/plain` instead of `application/octet-stream`
 	# And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
 	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
 }
+
+# function pserver() {
+#   if [ -z "$1" ]; then
+#     port=8000
+#   else
+#     port=$1
+#   fi
+#   echo "Serving HTTP on: http://localhost:$port"
+#   python -m SimpleHTTPServer $1
+# }
 
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
