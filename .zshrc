@@ -96,11 +96,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-. ~/dots/source-files
+. ~/dots/source_files
 
 # n: node package manager
 export N_PREFIX="$HOME/n"
-export PATH="$N_PREFIX/bin:$PATH" 
+export PATH="$N_PREFIX/bin:$PATH"
 
 # added by Anaconda3 2019.10 installer
 # >>> conda init >>>
