@@ -1,7 +1,7 @@
 function gg() {
   open /Applications/Google\ Chrome.app/ "http://www.google.com/search?q=$*";
 }
-function github() {
+function ghug() {
   open /Applications/Google\ Chrome.app/ "https://github.com/$*";
 }
 function youtube() {
@@ -13,14 +13,6 @@ function port-ls() {
 
 # mkdir and cd
 function take() { mkdir -p "$@" && cd "$_";}
-
-function cdd() {
-  cd "./$(fzf)/.."
-}
-
-function vimf() {
-  vim $(fzf)
-}
 
 # tree
 ############################

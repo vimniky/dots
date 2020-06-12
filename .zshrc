@@ -96,7 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-. ~/dots/source_files
+. ~/dots/source_files.sh
 
 # n: node package manager
 export N_PREFIX="$HOME/n"

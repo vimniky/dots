@@ -3,7 +3,7 @@ alias ls="ls -GAp"
 alias dirs='dirs -v'
 alias t="tmux"
 alias tx="tmuxinator"
-alias sozsh="source ~/.zshrc;source ~/.zshenv"
+alias sozsh="source ~/.zshrc"
 alias vim-install-boundle="vim +BundleInstall! +BundleClean +q"
 alias vbundles="vim ~/.vimrc.bundles.local"
 alias vi="vim"
@@ -19,12 +19,8 @@ alias ghc-sandbox="ghc -no-user-package-db -package-db .cabal-sandbox/*-packages
 alias ghci-sandbox="ghci -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
 alias runhaskell-sandbox="runhaskell -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
 alias yd="youtube-dl"
-alias py2=python
-alias py=python3
 #alias for 'brew services'
-alias oaf="open -a Finder"
-alias chrome="open -a Google\ Chrome"
-alias safari="open -a Safari"
+alias finder="open -a Finder"
 alias if0="ifconfig en0"
 alias find-files="mdfind -onlyin"
 #log
@@ -81,9 +77,9 @@ alias git-conflict='git diff --name-only --diff-filter=U'
 alias git-diff-file-history="git log --follow -p"
 
 # fzf
-alias fzopen='open $(fzf)'
-alias fzvim='vim $(fzf)'
-alias fzcode='code $(fzf)'
+alias fopen='open $(fzf)'
+alias fvim='vim $(fzf)'
+alias fcode='code $(fzf)'
 function fzgss() {
  git status -s \
  | fzf --no-sort --reverse \
