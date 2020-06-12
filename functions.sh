@@ -1,4 +1,4 @@
-function gg() {
+function google() {
   open /Applications/Google\ Chrome.app/ "http://www.google.com/search?q=$*";
 }
 function ghug() {
