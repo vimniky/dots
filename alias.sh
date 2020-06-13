@@ -1,12 +1,10 @@
 alias sudo='sudo ' # Enable aliases to be sudo’ed
 alias ls="ls -GAp"
 alias dirs='dirs -v'
-alias t="tmux"
 alias tx="tmuxinator"
 alias sozsh="source ~/.zshrc"
 alias vim-install-boundle="vim +BundleInstall! +BundleClean +q"
 alias vbundles="vim ~/.vimrc.bundles.local"
-alias vi="vim"
 alias vim="nvim"
 alias desk="cd ~/Desktop"
 alias valias="vim ~/dots/alias.sh"
@@ -72,7 +70,7 @@ alias reload="exec $SHELL -l"
 # git
 alias gmm='git commit -m'
 alias gma='git commit --amend'
-alias git-confict-files="git diff  --diff-filter=U"
+alias git-confict-files="git diff --diff-filter=U"
 alias git-conflict='git diff --name-only --diff-filter=U'
 alias git-diff-file-history="git log --follow -p"
 
@@ -80,8 +78,13 @@ alias git-diff-file-history="git log --follow -p"
 alias fopen='open $(fzf)'
 alias fvim='vim $(fzf)'
 alias fcode='code $(fzf)'
-function fzgss() {
+function fz-gss() {
  git status -s \
  | fzf --no-sort --reverse \
  --preview 'git diff --color=always {+2}'
 }
+fgitd() {
+  preview="git diff $@ --color=always -- {-1} | diff-so-fancy"
+  git diff $@ --name-only | fzf -m --ansi --preview $preview
+}
+alias fgd=fgitd
