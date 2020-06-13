@@ -7,3 +7,4 @@ ln -sf $DOTS_PATH/.tmux.conf.local $HOME/.tmux.conf.local
 ln -sf $DOTS_PATH/tmuxinator $HOME/.config/tmuxinator
 ln -sf $DOTS_PATH/.gitignore $HOME/.config/.gitignore
 ln -sf $DOTS_PATH/.gitconfig $HOME/.config/.gitconfig
+ln -sf $DOTS_PATH/.SpaceVim.d $HOME/.SpaceVim.d

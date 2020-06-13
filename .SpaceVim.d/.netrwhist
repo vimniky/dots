@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/viky/dev/web/excalidraw/src'
+let g:netrw_dirhist_3='/Users/viky/dev/web/excalidraw'
+let g:netrw_dirhist_2='/Users/viky/Desktop'
+let g:netrw_dirhist_1='/Users/viky/dots'
