@@ -17,6 +17,7 @@ alias ghc-sandbox="ghc -no-user-package-db -package-db .cabal-sandbox/*-packages
 alias ghci-sandbox="ghci -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
 alias runhaskell-sandbox="runhaskell -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
 alias yd="youtube-dl"
+alias code-settings="code $HOME/Library/Application\ Support/Code/User"
 #alias for 'brew services'
 alias finder="open -a Finder"
 alias if0="ifconfig en0"
