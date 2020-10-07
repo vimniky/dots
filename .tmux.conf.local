@@ -278,7 +278,8 @@ tmux_conf_copy_to_os_clipboard=false
 #set -g history-limit 10000
 
 # start with mouse mode enabled
-#set -g mouse on
+set -g mouse on
+
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
@@ -297,14 +298,12 @@ tmux_conf_copy_to_os_clipboard=false
 
 # Refresh tmux
 bind-key r source-file ~/.tmux.conf
-# mouse behavior
-set -g mouse on
 
 # split panes using | and -
 bind | split-window -h
 bind - split-window -v
 
-set-window-option -g aggressive-resize on
+# set-window-option -g aggressive-resize on
 
 # bind-key : command-prompt
 # bind-key r refresh-client
