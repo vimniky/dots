@@ -121,3 +121,5 @@ unset __conda_setup
 
 # added by travis gem
 [ -f /Users/viky/.travis/travis.sh ] && source /Users/viky/.travis/travis.sh
+
+eval $(thefuck --alias)

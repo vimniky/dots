@@ -1,7 +1,7 @@
 name: Default
 root: ~/
 
-startup_window: Main
+startup_window: Default
 
 # Optional tmux socket
 # socket_name: foo
@@ -64,25 +64,24 @@ startup_window: Main
 #    tiled   Panes are spread out as evenly as possible over the window in both rows and columns.
 
 windows:
+  - Default:
+      panes:
+        -  # Pane 1
   - Main:
       layout: main-vertical
       panes:
-        - # Pane 1
-        - # Pane 2
-        - # Pane 3
-  - V2: 
+        -  # Pane 1
+        -  # Pane 2
+        -  # Pane 3
+  - V2:
       layout: even-horizontal
       panes:
-        - # Pane 1
-        - # Pane 2
-  - Tasks:
+        -  # Pane 1
+        -  # Pane 2
+  - tasks:
       layout: tiled
-      panes: 
-        - # Pane 1
-        - # Pane 2
-        - # Pane 3
-        - # Pane 4
-  - Random: 
       panes:
-        - # Pane 1
-
+        -  # Pane 1
+        -  # Pane 2
+        -  # Pane 3
+        -  # Pane 4

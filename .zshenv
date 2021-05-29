@@ -9,10 +9,6 @@ export PATH=$HOME/.just-installs/bin:$PATH
 export EDITOR="vim"
 export editor="vim"
 
-# Homebrew
-# Change defalult Homebrew Bottles sources
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
-
 # yarn
 export PATH="$PATH:$HOME/.yarn/bin"
 
@@ -22,8 +18,10 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export TERM=xterm-256color
 
 # fzf setting
+# https://github.com/junegunn/fzf#preview-window
 # combine with cat or bat to display the file preview
 export FZF_DEFAULT_OPTS='--height 100% --margin=0,0,5%,0 --reverse --preview="bat -n --color always {}" --preview-window=right:66%:wrap'
+# # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
 
 # bat
